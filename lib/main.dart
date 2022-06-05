@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sharehouse_app/pages/authentication/sign_up_page.dart';
+import 'package:sharehouse_app/pages/onboarding/onboarding_page.dart';
 import 'package:sharehouse_app/styles.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import './pages/pages.dart';
+// import './pages/pages.dart';
 // import 'pages/onboarding/components/page_counter.dart';
 
 bool? seenOnboard;
@@ -35,7 +37,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         scaffoldBackgroundColor: kScaffoldBackground,
       ),
-      home: seenOnboard == true ? SignUpPage() : OnBoardingPage(),
+      // home: seenOnboard == true ? SignUpPage() : OnBoardingPage(),
+      home:  OnBoardingPage(),
     );
   }
 }
