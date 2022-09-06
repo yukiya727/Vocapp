@@ -1,4 +1,4 @@
-# shared_house_manager_app
+# Vocabulary_app
 
 A new Flutter project.
 
