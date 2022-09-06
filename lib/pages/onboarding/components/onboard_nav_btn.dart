@@ -21,7 +21,7 @@ class OnBoardNavBtn extends StatelessWidget {
         padding: const EdgeInsets.all(4.0),
         child: Text(
           name,
-          style: kBodyText1,
+          style: kBodyText2,
         ),
       ),
     );

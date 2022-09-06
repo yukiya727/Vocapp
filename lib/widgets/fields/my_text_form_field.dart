@@ -24,12 +24,12 @@ class MyTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       child: TextFormField(
         style: focusNode.hasFocus
-            ? kBodyText2.copyWith(color: kPrimaryColor)
+            ? kBodyText3.copyWith(color: kPrimaryColor)
             : kInputHintStyle,
-        cursorColor: kSecondaryColor,
+        cursorColor: kSecondaryColor3,
         keyboardType: inputType,
         textInputAction: inputAction,
         focusNode: focusNode,
@@ -41,7 +41,7 @@ class MyTextFormField extends StatelessWidget {
           enabledBorder: kInputBorder,
           hintText: hint,
           hintStyle: kInputHintStyle,
-          // contentPadding: EdgeInsets.all(0),
+          contentPadding: EdgeInsets.all(0),
           // since we removed container remove content padding 0 to enable default padding for the field
           prefixIcon: Padding(
             padding: const EdgeInsets.only(right: 16),
@@ -62,7 +62,7 @@ class MyTextFormField extends StatelessWidget {
                   icon,
                   color: focusNode.hasFocus
                       ? kPrimaryColor
-                      : kSecondaryColor.withOpacity(0.5),
+                      : kPrimaryColor2.withOpacity(0.5),
                 ),
               ),
             ),

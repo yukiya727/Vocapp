@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sharehouse_app/pages/onboarding/components/onboarding_contents.dart';
-import 'package:sharehouse_app/pages/onboarding/components/page_counter.dart';
+import 'package:vocapp/pages/onboarding/components/onboarding_contents.dart';
+import 'package:vocapp/pages/onboarding/components/page_counter.dart';
 
 class PageIndicator extends StatefulWidget {
   @override

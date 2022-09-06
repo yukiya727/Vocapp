@@ -27,10 +27,10 @@ class MainTextButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           buttonName,
-          style: kBodyText3,
+          style: kButtonText,
         ),
         style: ButtonStyle(
-          padding: MaterialStateProperty.all(const EdgeInsets.all(20)),
+          padding: MaterialStateProperty.all(const EdgeInsets.all(10)),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50.0),

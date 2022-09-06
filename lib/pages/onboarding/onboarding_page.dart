@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sharehouse_app/pages/onboarding/components/onboarding_contents.dart';
-import 'package:sharehouse_app/size_configs.dart';
+import 'package:vocapp/pages/onboarding/components/onboarding_contents.dart';
+import 'package:vocapp/size_configs.dart';
 import '../../styles.dart';
 import '../../widgets/buttons/main_text_button.dart';
-// import '../authentication/sign_up_page.dart';
+import '../../pages/authentication/login_page.dart';
 import 'components/onboard_nav_btn.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -25,7 +25,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       height: 12,
       width: 12,
       decoration: BoxDecoration(
-        color: currentPage == index ? kPrimaryColor : kSecondaryColor,
+        color: currentPage == index ? kPrimaryColor : kSecondaryColor3,
         shape: BoxShape.circle,
       ),
     );
@@ -61,44 +61,46 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               itemBuilder: (context, index) => Column(
                 children: [
                   SizedBox(
-                    height: sizeV * 10,
+                    height: sizeV * 5,
                   ),
                   Container(
-                    height: sizeV * 50,
+                    height: sizeV * 40,
                     child: Image.asset(
                       onBoardingContents[index].image,
                       fit: BoxFit.contain,
                     ),
                   ),
-                  SizedBox(
-                    // height: sizeV * 5,
-                  ),
-                  Text(
-                    onBoardingContents[index].title,
-                    style: kTitle,
-                    textAlign: TextAlign.center,
+                  // SizedBox(
+                  //   height: sizeV * 5,
+                  // ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: sizeH * 10),
+                    child: Text(
+                      onBoardingContents[index].title,
+                      textAlign: TextAlign.center,
+                      style: kTitle,
+                    ),
                   ),
                   Padding(padding: EdgeInsets.only(top: sizeV * 5)),
                   Padding(
-                      padding: EdgeInsets.symmetric(horizontal: sizeH * 5),
+                      padding: EdgeInsets.symmetric(horizontal: sizeH * 10),
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
                           style: kBodyText1,
                           children: [
-                            TextSpan(text: 'WE CAN '),
                             TextSpan(
-                                text: 'HELP YOU ',
-                                style: kBodyText2
+                              text: onBoardingContents[index].description,
+                              style: kBodyText2,
                             ),
-                            TextSpan(text: 'TO HAVE A BETTER '),
-                            TextSpan(text: 'LIFE IN YOUR '),
-                            TextSpan(
-                              text: 'SHAREHOUSE ',
-                              style: TextStyle(
-                                color: kPrimaryColor,
-                              ),
-                            ),
+                            // TextSpan(text: 'TO HAVE A BETTER '),
+                            // TextSpan(text: 'LIFE IN YOUR '),
+                            // TextSpan(
+                            //   text: 'SHAREHOUSE ',
+                            //   style: TextStyle(
+                            //     color: kPrimaryColor,
+                            //   ),
+                            // ),
                           ],
                         ),
                       )),
@@ -111,32 +113,31 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: sizeH * 5,
-                vertical: sizeV * 5),
+                horizontal: sizeH * 5, vertical: sizeV * 5),
             child: Column(
               children: [
                 currentPage == onBoardingContents.length - 1
                     ? MainTextButton(
-                      buttonName: 'Get Started',
-                      onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => SignUpPage(),
-                        //     ));
-                      },
-                      bgColor: kPrimaryColor,
-                    )
+                        buttonName: 'Get Started',
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ));
+                        },
+                        bgColor: kPrimaryColor,
+                      )
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           OnBoardNavBtn(
                             name: 'Skip',
                             onPressed: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) => SignUpPage()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginPage()));
                             },
                           ),
                           Row(

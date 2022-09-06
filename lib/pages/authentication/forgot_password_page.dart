@@ -137,7 +137,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             ),
                             SmallTextButton(
                               buttonText: 'Login',
-                              page: LoginPage(),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginPage()),
+                                );
+                              },
                             ),
                           ],
                         ),

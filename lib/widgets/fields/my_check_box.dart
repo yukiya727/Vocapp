@@ -23,7 +23,7 @@ class _MyCheckBoxState extends State<MyCheckBox> {
       children: [
         Checkbox(
           activeColor: kPrimaryColor,
-          checkColor: kSecondaryColor,
+          checkColor: kButtonTextColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4),
           ),

@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sharehouse_app/pages/authentication/sign_up_page.dart';
-import 'package:sharehouse_app/pages/onboarding/onboarding_page.dart';
-import 'package:sharehouse_app/styles.dart';
+import 'package:vocapp/pages/authentication/login_page.dart';
+import 'package:vocapp/pages/onboarding/onboarding_page.dart';
+import 'package:vocapp/pages/home/home_page.dart';
+import 'package:vocapp/styles.dart';
+import 'package:vocapp/globals.dart' as globals;
 import 'package:shared_preferences/shared_preferences.dart';
-// import './pages/pages.dart';
-// import 'pages/onboarding/components/page_counter.dart';
 
-bool? seenOnboard;
 
-void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   // to show status bar
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top]);
 
   // to load onboard for the first time only
   SharedPreferences pref = await SharedPreferences.getInstance();
-  seenOnboard = pref.getBool('seenOnboard') ?? false; //if null set to false
+  globals.seenOnboard = await pref.getBool('seenOnboard') ?? false; //if null set to false
+
+  init_globals();
 
   runApp(MyApp());
 }
@@ -27,18 +27,40 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Sharehouse App',
-      theme: ThemeData(
-        textTheme: GoogleFonts.manropeTextTheme(
-          Theme.of(context).textTheme,
-        ),
-        primarySwatch: Colors.green,
-        scaffoldBackgroundColor: kScaffoldBackground,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      // to change safe area insets bar color
+      value: SystemUiOverlayStyle(
+        statusBarColor: kScaffoldBackground, //top status bar
+        systemNavigationBarColor: kScaffoldBackground, //bottom bar
+        statusBarIconBrightness: Brightness.dark, // status bar icons' color
+
+        systemNavigationBarIconBrightness:
+        Brightness.dark, //navigation bar icons' color
       ),
-      // home: seenOnboard == true ? SignUpPage() : OnBoardingPage(),
-      home:  OnBoardingPage(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Vocapp',
+        theme: ThemeData(
+          textTheme: GoogleFonts.manropeTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          primarySwatch: Colors.green,
+          scaffoldBackgroundColor: kScaffoldBackground,
+        ),
+        routes: {
+          '/': (context) => OnBoardingPage(),
+          '/login': (context) => LoginPage(),
+          '/home': (context) => HomePage(),
+        },
+        // initialRoute: seenOnboard == false
+        //     ? '/' : '/login',
+        initialRoute:  '/home',
+      ),
     );
   }
+}
+
+void init_globals() {
+  // to load global variables
+  globals.library_edit_mode = 1;
 }

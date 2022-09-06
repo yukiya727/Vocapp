@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 
 // for responsive design
 class SizeConfig {
-  static MediaQueryData? _mediaQueryData;
+  static MediaQueryData? queryData;
   static double? screenWidth;
   static double? screenHeight;
+  static double? screenRatio;
   static double? blockSizeHorizontal;
   static double? blockSizeV;
 
   void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData!.size.width;
-    screenHeight = _mediaQueryData!.size.height;
+    queryData = MediaQuery.of(context);
+    screenWidth = queryData!.size.width;
+    screenHeight = queryData!.size.height;
+    screenRatio = queryData!.devicePixelRatio;
     blockSizeHorizontal = screenWidth! / 100;
     blockSizeV = screenHeight! / 100;
   }

@@ -1,4 +1,4 @@
-name: sharehouse_app
+name: vocapp
 description: A new Flutter project.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
@@ -14,7 +14,8 @@ dependencies:
   provider: ^6.0.3
   form_field_validator: ^1.1.0
   google_fonts: ^2.1.0 # to use google fonts
-  shared_preferences: ^2.0.7 # to save data to device we use this to load onboard for first time only
+  shared_preferences: ^2.0.7
+  percent_indicator: ^4.0.1
 
 dev_dependencies:
   flutter_test:

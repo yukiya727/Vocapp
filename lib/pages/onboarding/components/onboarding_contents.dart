@@ -12,23 +12,23 @@ class OnBoarding {
 
 List<OnBoarding> onBoardingContents = [
   OnBoarding(
-    title: 'Welcome to\n Sharehouse app',
-    image: 'assets/images/onboarding_image_1.png',
-    description: 'Hello,',
+    title: 'Welcome to\n Vocapp',
+    image: 'assets/images/onboarding_gif_1.gif',
+    description: 'Ever struggled with memorizing new words when studying a new language?',
   ),
   OnBoarding(
-    title: 'Check schedule easily',
-    image: 'assets/images/onboarding_image_2.png',
-    description: 'Hello,',
+    title: 'Ai-powered studying tool',
+    image: 'assets/images/onboarding_gif_2.gif',
+    description: 'With tailor-made exercises,\n we will help you turn your brain on turbo mode, ',
   ),
   OnBoarding(
-    title: 'Smart home support',
-    image: 'assets/images/onboarding_image_3.png',
-    description: 'Hello,',
+    title: 'Boost your Brainpower',
+    image: 'assets/images/onboarding_gif_3.gif',
+    description: 'Start your journey right now\nand enjoy not only the end result but the journey itself',
   ),
-  OnBoarding(
-    title: 'Connect with your community',
-    image: 'assets/images/onboarding_image_4.png',
-    description: 'Hello,',
-  ),
+  // OnBoarding(
+  //   title: 'Connect with your community',
+  //   image: 'assets/images/onboarding_image_4.png',
+  //   description: 'Hello,',
+  // ),
 ];

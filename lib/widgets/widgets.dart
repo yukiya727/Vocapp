@@ -5,3 +5,4 @@ export './fields/my_password_field.dart';
 export './fields/my_text_form_field.dart';
 export './fields/my_check_box.dart';
 export './buttons/small_text_button.dart';
+export './buttons/main_icon_text_button.dart';

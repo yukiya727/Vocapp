@@ -6,11 +6,11 @@ class SmallTextButton extends StatelessWidget {
   const SmallTextButton({
     Key? key,
     required this.buttonText,
-    required this.page,
+    required this.onPressed,
   }) : super(key: key);
 
   final String buttonText;
-  final Widget page;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,7 @@ class SmallTextButton extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => page),
-          );
+          onPressed();
         },
         splashColor: kSecondaryColor.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
