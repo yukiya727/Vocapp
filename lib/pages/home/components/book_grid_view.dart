@@ -40,7 +40,7 @@ class _EditBookLIstViewState extends State<EditBookLIstView> {
         ),
         child: GridView.count(
           // physics: const PageScrollPhysics(),
-          controller: _controller,
+          // controller: _controller,
           crossAxisCount: 3,
           childAspectRatio: 3 / 4,
           padding: const EdgeInsets.all(8.0),

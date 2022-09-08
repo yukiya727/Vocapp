@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import '../../../styles.dart';
 import '../../../widgets/buttons/small_text_button.dart';
 import '../../../globals.dart' as globals;
+import '../home_page.dart';
 import 'book_grid_view.dart';
-import 'horizontal_scroll_list.dart';
+import 'horizontal_scroll_page.dart';
 
 class LibraryView extends StatefulWidget {
-  LibraryView({
+  const LibraryView({
     Key? key,
     required this.books,
   }) : super(key: key);
@@ -15,10 +16,15 @@ class LibraryView extends StatefulWidget {
   final List<Map> books;
 
   @override
-  _LibraryViewState createState() => _LibraryViewState();
+  State<LibraryView> createState() => _LibraryViewState();
 }
 
 class _LibraryViewState extends State<LibraryView> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +32,7 @@ class _LibraryViewState extends State<LibraryView> {
       body: Column(
         children: [
           Expanded(
-            flex: globals.library_edit_mode == 1 ? 2 : 1,
+            flex: globals.library_edit_mode == 1 ? 2 : 2,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -45,37 +51,19 @@ class _LibraryViewState extends State<LibraryView> {
                           ],
                         )
                       : SizedBox(),
-                  Align(
+                  Container(
                     alignment: Alignment.centerRight,
-                    child: globals.library_edit_mode == 1
-                        ? SmallTextButton(
-                            buttonText: 'edit',
+                    child: SmallTextButton(
+                            buttonText: globals.library_edit_mode == 1? 'edit' : "done",
                             onPressed: () {
                               setState(
                                 () {
-                                  globals.library_edit_mode = 0;
+                                  globals.library_edit_mode == 0
+                                      ? globals.library_edit_mode = 1
+                                      : globals.library_edit_mode = 0;
                                   Navigator.of(context).pushReplacement(
                                     _createRoute(
-                                      LibraryView(
-                                        books: widget.books,
-                                      ),
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                          )
-                        : SmallTextButton(
-                            buttonText: 'done',
-                            onPressed: () {
-                              setState(
-                                () {
-                                  globals.library_edit_mode = 1;
-                                  Navigator.of(context).pushReplacement(
-                                    _createRoute(
-                                      LibraryView(
-                                        books: widget.books,
-                                      ),
+                                      const HomePage(),
                                     ),
                                   );
                                 },
@@ -89,7 +77,8 @@ class _LibraryViewState extends State<LibraryView> {
           ),
           Expanded(
             flex: globals.library_edit_mode == 1 ? 6 : 8,
-            child: globals.library_edit_mode == 1
+            child:
+            globals.library_edit_mode == 1
                 ? BookLIstView(
                     books: widget.books,
                   )
@@ -108,8 +97,8 @@ Route _createRoute(Widget destination) {
     pageBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation) =>
         destination,
-    transitionDuration: const Duration(milliseconds: 1200),
-    reverseTransitionDuration: const Duration(milliseconds: 1200),
+    transitionDuration: const Duration(milliseconds: 2000),
+    reverseTransitionDuration: const Duration(milliseconds: 2000),
     transitionsBuilder: (BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
       return FadeTransition(

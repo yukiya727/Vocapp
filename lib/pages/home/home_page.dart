@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:vocapp/pages/home/components/stats_view.dart';
 import '../../styles.dart';
 import '../../widgets/others/main_navi_bar.dart';
 import 'components/library_view.dart';
@@ -7,8 +8,9 @@ import '../../../globals.dart' as globals;
 
 // a homepage with a navigator bar and a body
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -17,6 +19,36 @@ class _HomePageState extends State<HomePage> {
   );
 
   final List<Map> books = [
+    {
+      "Name": "Book 1",
+      "Type": "language",
+      "LanguageType": "ES",
+      "Words": "100",
+      "Learned": "20",
+      "LastViewed": "2022-01-01",
+      "Created": "2021-01-01",
+      "isFavorite": false,
+    },
+    {
+      "Name": "Book 2",
+      "Type": "language",
+      "LanguageType": "SV",
+      "Words": "100",
+      "Learned": "20",
+      "LastViewed": "2022-01-01",
+      "Created": "2021-01-01",
+      "isFavorite": true,
+    },
+    {
+      "Name": "Book 3",
+      "Type": "language",
+      "LanguageType": "ZH",
+      "Words": "100",
+      "Learned": "20",
+      "LastViewed": "2022-01-01",
+      "Created": "2021-01-01",
+      "isFavorite": false,
+    },
     {
       "Name": "Book 1",
       "Type": "language",
@@ -68,9 +100,7 @@ class _HomePageState extends State<HomePage> {
               physics: NeverScrollableScrollPhysics(),
               children: [
                 LibraryView(books: books),
-                Container(
-                  color: Colors.redAccent,
-                ),
+                StatsView(books: books),
                 Container(
                   color: Colors.green,
                 ),

@@ -93,14 +93,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               text: onBoardingContents[index].description,
                               style: kBodyText2,
                             ),
-                            // TextSpan(text: 'TO HAVE A BETTER '),
-                            // TextSpan(text: 'LIFE IN YOUR '),
-                            // TextSpan(
-                            //   text: 'SHAREHOUSE ',
-                            //   style: TextStyle(
-                            //     color: kPrimaryColor,
-                            //   ),
-                            // ),
                           ],
                         ),
                       )),

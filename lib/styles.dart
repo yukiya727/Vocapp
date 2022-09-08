@@ -7,6 +7,7 @@ const Color kSecondaryColor = Color(0xffff7664);
 const Color kSecondaryColor2 = Color(0xffffc364);
 const Color kSecondaryColor3 = Color(0xff649fff);
 const Color kTextColor = Color(0xff000000);
+const Color kTextColor2 = Color(0x46000000);
 const Color kButtonTextColor = Color(0xffffffff);
 const Color kScaffoldBackground = Color(0xffffffff);
 const Color kTextFieldBackground = Color(0xfff4e9ff);
