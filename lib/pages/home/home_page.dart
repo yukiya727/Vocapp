@@ -4,11 +4,13 @@ import 'package:vocapp/pages/home/components/stats_view.dart';
 import '../../styles.dart';
 import '../../widgets/others/main_navi_bar.dart';
 import 'components/library_view.dart';
+import 'components/test_content.dart' as contents;
 import '../../../globals.dart' as globals;
 
 // a homepage with a navigator bar and a body
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -18,68 +20,8 @@ class _HomePageState extends State<HomePage> {
     initialPage: 0,
   );
 
-  final List<Map> books = [
-    {
-      "Name": "Book 1",
-      "Type": "language",
-      "LanguageType": "ES",
-      "Words": "100",
-      "Learned": "20",
-      "LastViewed": "2022-01-01",
-      "Created": "2021-01-01",
-      "isFavorite": false,
-    },
-    {
-      "Name": "Book 2",
-      "Type": "language",
-      "LanguageType": "SV",
-      "Words": "100",
-      "Learned": "20",
-      "LastViewed": "2022-01-01",
-      "Created": "2021-01-01",
-      "isFavorite": true,
-    },
-    {
-      "Name": "Book 3",
-      "Type": "language",
-      "LanguageType": "ZH",
-      "Words": "100",
-      "Learned": "20",
-      "LastViewed": "2022-01-01",
-      "Created": "2021-01-01",
-      "isFavorite": false,
-    },
-    {
-      "Name": "Book 1",
-      "Type": "language",
-      "LanguageType": "ES",
-      "Words": "100",
-      "Learned": "20",
-      "LastViewed": "2022-01-01",
-      "Created": "2021-01-01",
-      "isFavorite": false,
-    },
-    {
-      "Name": "Book 2",
-      "Type": "language",
-      "LanguageType": "SV",
-      "Words": "100",
-      "Learned": "20",
-      "LastViewed": "2022-01-01",
-      "Created": "2021-01-01",
-      "isFavorite": true,
-    },
-    {
-      "Name": "Book 3",
-      "Type": "language",
-      "LanguageType": "ZH",
-      "Words": "100",
-      "Learned": "20",
-      "LastViewed": "2022-01-01",
-      "Created": "2021-01-01",
-      "isFavorite": false,
-    },
-  ];
+  // for testing
+  final books = contents.books;
 
   @override
   Widget build(BuildContext context) {
@@ -96,15 +38,16 @@ class _HomePageState extends State<HomePage> {
                 )
               : null,
           body: PageView(
-              controller: _controller,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                LibraryView(books: books),
-                StatsView(books: books),
-                Container(
-                  color: Colors.green,
-                ),
-              ]),
+            controller: _controller,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              LibraryView(books: books),
+              StatsView(books: books),
+              Container(
+                color: Colors.green,
+              ),
+            ],
+          ),
         ),
       ),
     );

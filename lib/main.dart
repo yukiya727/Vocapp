@@ -8,7 +8,6 @@ import 'package:vocapp/styles.dart';
 import 'package:vocapp/globals.dart' as globals;
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // to show status bar
@@ -17,7 +16,8 @@ Future<void> main() async {
 
   // to load onboard for the first time only
   SharedPreferences pref = await SharedPreferences.getInstance();
-  globals.seenOnboard = await pref.getBool('seenOnboard') ?? false; //if null set to false
+  globals.seenOnboard =
+      await pref.getBool('seenOnboard') ?? false; //if null set to false
 
   init_globals();
 
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.dark, // status bar icons' color
 
         systemNavigationBarIconBrightness:
-        Brightness.dark, //navigation bar icons' color
+            Brightness.dark, //navigation bar icons' color
       ),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
         },
         // initialRoute: seenOnboard == false
         //     ? '/' : '/login',
-        initialRoute:  '/home',
+        initialRoute: '/home',
       ),
     );
   }

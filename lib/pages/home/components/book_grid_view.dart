@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../size_configs.dart';
 import '../../../styles.dart';
-import 'hero_transition_tween.dart';
+import '../methods/hero_transition_tween.dart';
 
 class EditBookLIstView extends StatefulWidget {
   const EditBookLIstView({

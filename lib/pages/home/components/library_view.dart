@@ -32,7 +32,7 @@ class _LibraryViewState extends State<LibraryView> {
       body: Column(
         children: [
           Expanded(
-            flex: globals.library_edit_mode == 1 ? 2 : 2,
+            flex: globals.library_edit_mode == 1 ? 2 : 1,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -61,6 +61,7 @@ class _LibraryViewState extends State<LibraryView> {
                                   globals.library_edit_mode == 0
                                       ? globals.library_edit_mode = 1
                                       : globals.library_edit_mode = 0;
+                                  // Navigator.of(context).popUntil((route) => route.isFirst);
                                   Navigator.of(context).pushReplacement(
                                     _createRoute(
                                       const HomePage(),
@@ -97,8 +98,8 @@ Route _createRoute(Widget destination) {
     pageBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation) =>
         destination,
-    transitionDuration: const Duration(milliseconds: 2000),
-    reverseTransitionDuration: const Duration(milliseconds: 2000),
+    transitionDuration: const Duration(milliseconds: 1200),
+    reverseTransitionDuration: const Duration(milliseconds: 1200),
     transitionsBuilder: (BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
       return FadeTransition(
@@ -111,3 +112,4 @@ Route _createRoute(Widget destination) {
     },
   );
 }
+

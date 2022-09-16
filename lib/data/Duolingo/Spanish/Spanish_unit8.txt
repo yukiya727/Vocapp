@@ -1,0 +1,183 @@
+UNIT 8 OF 9
+CLOTHING 2
+1 . saco, quedar, zapatilla, chaleco, suelto
+2 . colorido, aro, lino, combinar, raya
+3 . zapatería, cordón, joyería, atar, ganga
+4 . pulóver, seda, manga, etiqueta, al revés
+5 . perfumería, de segunda mano, pantufla, lunar, tejer
+
+HYGIENE
+1 . protector solar, loción, corporal, cambiar, desodorante
+2 . secador de pelo, afeitador, afeitarse, rizado, peluquero
+3 . crema de afeitar, acondicionador, peluquería, belleza, servir
+4 . uña, cortarse, cepillo de uñas, cortaúñas, esmalte de uñas
+5 . antibacterial, pañuelo, pasta de dientes, gel, lápiz labial
+
+PURCHASES
+1 . sofisticado, mostrar, regalártelo, tacón, perla
+2 . colonia, unos cuantos, cosmético, salón de belleza, formal
+3 . claro, rebaja, deportivo, bikini, arrepentirse
+4 . incómodo, corto, chal, plateado, hebilla
+5 . top, hacer un descuento, floreado, liso, extragrande
+
+RETURNS
+1 . se puede, garantía, reparación, se paga
+2 . se, prender, bombilla, apenas, similar
+3 . enseguida, radiador, vidrio, fuerte, mudanza
+4 . si no, caer, tirar, se nos, dejar de
+5 . además de, bañera, devolución, manchar, realizar
+
+BE POLITE!
+1 . servilleta, tocino, poder, querer, cubierto
+2 . mariscos, traería, puede ser, sabor, sería posible
+3 . me gustaría, cordero, me gustaría que, cocido, cerdo
+4 . necesitaría, carne de res, importaría, chuleta, molestaría
+5 . con gas, se podría, manzanilla, no podría
+
+CUSTOMERS
+1 . buscar, supervisor, explicar, queja, ni siquiera
+2 . pagar, atención, llegar, negocio, llamar
+3 . comenzar, reclamo, de más, actitud, reembolso
+4 . entregar, chequear, en cuanto, faltar, pedido
+5 . preguntar, una vez que, artículo, envío, rastrear
+
+COMPLAINTS
+1 . quejarse, aceptable, gasto, lógico, atender
+2 . promoción, plazo, manchado, salir, vencido
+3 . quinto, en primer lugar, en segundo lugar, perder el tiempo, reemplazar
+4 . dañado, en cualquier caso, este, parecido, fijarse
+5 . encargarse, diferente, agotado, uno, comparar
+
+SMALL TALK
+1 . visitado, valer la pena, sexto, un poco, extranjero
+2 . ciudad natal, mayor, pariente, cumplir, menor
+3 . guitarrista, arquitectura, acostumbrarse, qué, poco
+4 . vecindario, vida nocturna, además de, por lo general, lo más divertido
+5 . con qué, llevar, plato del día, poco a poco, económico
+
+SUBJ 3 (GRAMMAR SKILL)
+ECOLOGY
+1 . delfín, atracción, científico, marino, ballena
+2 . ola, esencial, arroyo, bahía, cultivo
+3 . desastre, contaminación, proteger, medio ambiente, cambio climático
+4 . común, natural, selva, ave, tortuga
+5 . mariposa, jirafa, ecologista, en ninguna parte, pingüino
+
+ART TALK
+1 . retrato, subtítulo, celebridad, presentador, entrevistar
+2 . episodio, estreno, espectador, exhibición, anterior
+3 . escultor, seguramente, cine, obra, internacionalmente
+4 . aplaudir, el de, autorretrato, película de suspenso, desconocido
+5 . admirar, historia del arte, paisaje, brillante, ballet
+
+TRAVELERS
+1 . despegar, embarcar, escala, dormirse, aterrizar
+2 . casi nunca, viajero, leyenda, bañarse, amanecer
+3 . hospedarse, atardecer, con vista a, magnífico, registrarse
+4 . recuerdo, juventud, coleccionar, asustar, siempre que
+5 . ahora sí, turbulencia, salir, horario, de ida
+
+I AGREE
+1 . yo diría, económico, podría ser, ministro, discutir
+2 . punto, exactamente, alcalde, intercambiar, admitir
+3 . de mi lado, pensamiento, brillante, mente, político
+4 . impuesto, ciudadano, claro, derecho, minoría
+5 . política, reconocer, es mejor, religión, absolutamente
+
+QUESTIONS
+1 . carta de presentación, multinacional, secretario, periodista, a dónde
+2 . por dónde, ingeniería, desde cuándo, hasta dónde, renunciar
+3 . a quién, rechazar, escáner, recursos humanos, mínimo
+4 . qué tan, aproximadamente, a qué distancia, cualidad, complicado
+5 . propietario, valer, capacitación, vendedor, jubilarse
+
+PROBABLY
+1 . celoso, poner, nada más, salir, cariñoso
+2 . tomar, es posible que, tomar con calma, hacer una broma, furioso
+3 . promesa, culpa, seguro que, mentira, cumplir
+4 . solo, sentirse, no crees, sentimiento, confundido
+5 . es probable que, llamar, puede que, envidioso, encantador
+
+DOUBTS
+1 . hablar, cara a cara, dudar, decir, cuanto antes
+2 . querer, dudar que, perdonar, algún día, sensato
+3 . inseguro, en común, de nuevo, tener intenciones, falso
+4 . no me parece que, matrimonio, comprometido, no creo que, en secreto
+5 . no es seguro que, sugerencia, en contacto, alegrarse, felizmente
+
+HOSPITAL
+1 . dentro de, nacer, embarazado, pesar
+2 . pecho, morir, urgentemente, internar
+3 . estricto, fallecer, tratamiento, seguro médico, curarse
+4 . respirar, toser, pulmón, radiografía, estornudar
+5 . enfermedad, parto, grave, muela, mejorarse
+
+HARD WORK
+1 . comenzado, trimestre, industria, construcción, dificultad
+2 . en total, considerar, reunido, financiero, producir
+3 . falta, estar a, mercado, demanda, recurso
+4 . ir, aumento, despedir, esfuerzo
+5 . a cuánto, préstamo, aprovechar, inútil, equipo
+
+URGENCY
+1 . disminuir, por, velocidad, parabrisas, cargar gasolina
+2 . bombero, apurarse, tardar, socorro, humo
+3 . ya mismo, lastimado, llevar, por si acaso, mueva
+4 . doméstico, centro médico, acompañe, con llave, cuidado
+5 . robo, de inmediato, golpearse, víctima, asustado
+
+GRATITUDE
+1 . ramo, gracias por, muchas gracias, de nada, gracias a
+2 . mil gracias, no hay problema, dar las gracias, no hay de qué, gusto
+3 . muchísimas gracias, por nada, colegio, cuidado, tanto
+4 . niñero, haberme, deber una, no preocuparse, amabilidad
+5 . placer, muy amable, por anticipado, ayudado, no tienes por qué
+
+LET'S GO!
+1 . vámonos, moto, por, embotellamiento, hora pico
+2 . buscar, bajémonos, rotonda, parada, doblemos
+3 . acera, acceso, veámonos, peatonal, ciclovía
+4 . seguir, calle sin salida, todo recto, túnel, diagonal
+5 . carril, caber, regresemos, cruce, camión
+
+BAD DAY
+1 . promedio, duro, desaprobar, fuerte, lento
+2 . experimento, laboratorio, totalmente, correctamente, concentrarse
+3 . escuela primaria, composición, fatal, ni, resolver
+4 . atentamente, bastante, preparado, nada, jurar
+5 . escuela secundaria, a propósito, quedarse atrás, unidad, revisión
+
+BAD NEWS
+1 . atacar, uno de, arma, delincuente, algunos de
+2 . delito, un tercio de, explotar, la mitad de, bomba
+3 . terrorista, arrestar, un grupo de, atentado, una parte de
+4 . prensa, la mayoría de, cárcel, muchos de, asesinato
+5 . tener lugar, ninguno de, testigo, disparo, denunciar
+
+COMFORT
+1 . calentar, avena, huevos revueltos, despierte, merendar
+2 . recordar a, recuerde, quiera, cocinemos, lasaña
+3 . guiso, para que, mantequilla de maní, cucharada, casero
+4 . pedir, duerma, hierba, repitamos, morirse de hambre
+5 . palomitas de maíz, hoy en día, jugoso, olor, poco después
+
+EMPATHY
+1 . rodilla, debe haber sido, bucear, desafío, doloroso
+2 . dolido, debe haber, victoria, sucedido, justo
+3 . cansarse, debo haber, increíble, hacer ejercicio, energía
+4 . pista, sufrir, haberme, lástima, agotado
+5 . por lo menos, positivo, a fin de cuentas, aliviado, tranquilo
+
+SUBJ 4 (GRAMMAR SKILL)
+SORRY
+1 . disculparse, regar, cuidar, poner la mesa, echar una mano
+2 . es una pena que, al revés, mantel, qué mala suerte, limpiar
+3 . enchufe, es una lástima que, ordenado, herramienta, siento mucho que
+4 . lamento que, desorden, acostumbrado, preguntarse, caer
+5 . servir, pegar, marco, quemar, a la perfección
+
+UNIT 8 OVERVIEW
+625 words
+25 skills
+CEFR B1
+Now you can express complaints and requests, communicating both politeness and urgency. You can also discuss daily experiences in more detail, including those surrounding health and hygiene.

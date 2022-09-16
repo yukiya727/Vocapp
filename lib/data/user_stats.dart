@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'user_stats.g.dart';
+
+@JsonSerializable()
 class UserStats {
   final String user_name;
   final DateTime reg_date;
@@ -5,7 +10,8 @@ class UserStats {
   final int studied_days_total;
   final int studied_words_total;
   final int words_added_total;
-  final List<Map> logs;
+  @JsonKey(includeIfNull: false)
+  final List<Map>? logs;
 
   UserStats({
     required this.user_name,
@@ -14,14 +20,11 @@ class UserStats {
     required this.studied_days_total,
     required this.studied_words_total,
     required this.words_added_total,
-    required this.logs,
+    this.logs,
   });
 
-  // factory UserStats.fromJson(Map<String, dynamic> json) {
-  //   return UserStats(
-  //     followers: json['followers'],
-  //     following: json['following'],
-  //     posts: json['posts'],
-  //   );
-  // }
+  factory UserStats.fromJson(Map<String, dynamic> json) =>
+      _$UserStatsFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserStatsToJson(this);
 }

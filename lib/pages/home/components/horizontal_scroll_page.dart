@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../../../size_configs.dart';
 import '../../../styles.dart';
-import 'hero_transition_tween.dart';
+import '../methods/hero_transition_tween.dart';
 
 class BookLIstView extends StatefulWidget {
   BookLIstView({
@@ -33,35 +33,37 @@ class _BookLIstViewState extends State<BookLIstView> {
     return PageView(
       controller: _controller,
       children: <Hero>[
-        for (int index = 0; index <= widget.books.length; index++)
+        for (int index = 0; index < widget.books.length; index++)
           Hero(
             tag: index,
             createRectTween: (Rect? begin, Rect? end) {
               //return MaterialRectCenterArcTween(begin: begin, end: end);
               return CustomRectTween(a: begin!, b: end!);
             },
-            child: index == 0
-                ? Padding(
-                    padding: EdgeInsets.all(20)
-                        .copyWith(bottom: SizeV * 15),
-                    child: GestureDetector(
-                      onTap: () {
-                        print('add new book');
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: kPrimaryColor,
-                        ),
-                        child: Icon(
-                          Icons.add,
-                          size: SizeV * 12,
-                          color: kScaffoldBackground,
-                        ),
-                      ),
-                    ),
-                  )
-                : Column(
+            child:
+            // index == 0
+                // ? Padding(
+                //     padding: EdgeInsets.all(20)
+                //         .copyWith(bottom: SizeV * 15),
+                //     child: GestureDetector(
+                //       onTap: () {
+                //         print('add new book');
+                //       },
+                //       child: Container(
+                //         decoration: BoxDecoration(
+                //           shape: BoxShape.circle,
+                //           color: kPrimaryColor,
+                //         ),
+                //         child: Icon(
+                //           Icons.add,
+                //           size: SizeV * 12,
+                //           color: kScaffoldBackground,
+                //         ),
+                //       ),
+                //     ),
+                //   )
+                // :
+              Column(
                     children: [
                       Card(
                         margin: const EdgeInsets.all(20.0),
@@ -76,11 +78,11 @@ class _BookLIstViewState extends State<BookLIstView> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                widget.books[index - 1]['Name'],
+                                widget.books[index]['Name'],
                                 style: kBodyText2,
                               ),
                               Text(
-                                widget.books[index - 1]['LanguageType'],
+                                widget.books[index]['LanguageType'],
                                 style: kBodyText4,
                               ),
                             ],
