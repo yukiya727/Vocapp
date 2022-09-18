@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../size_configs.dart';
 import '../../../styles.dart';
 import '../../../widgets/buttons/small_text_button.dart';
 import '../../../globals.dart' as globals;
-import '../home_page.dart';
-import 'book_grid_view.dart';
 import 'horizontal_scroll_page.dart';
+import 'library_edit_view.dart';
 
 class LibraryView extends StatefulWidget {
   const LibraryView({
@@ -27,65 +27,57 @@ class _LibraryViewState extends State<LibraryView> {
 
   @override
   Widget build(BuildContext context) {
+    final SizeV = SizeConfig.blockSizeV!;
+    final SizeH = SizeConfig.blockSizeHorizontal!;
+
     return Scaffold(
       backgroundColor: kScaffoldBackground,
       body: Column(
         children: [
-          Expanded(
-            flex: globals.library_edit_mode == 1 ? 2 : 1,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  globals.library_edit_mode == 1
-                      ? Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              'Good morning',
-                              textAlign: TextAlign.right,
-                              style: kBodyText1.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+          Padding(
+            padding: const EdgeInsets.all(16.0).copyWith(bottom: SizeV * 5),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Good morning',
+                      textAlign: TextAlign.right,
+                      style: kBodyText1.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                Container(
+                  alignment: Alignment.centerRight,
+                  child: SmallTextButton(
+                    buttonText: 'edit',
+                    onPressed: () {
+                      setState(
+                        () {
+                          globals.library_edit_mode = 1;
+                          // Navigator.of(context).popUntil((route) => route.isFirst);
+                          Navigator.of(context).push(
+                            _createRoute(
+                              LibraryEditView(books: widget.books),
                             ),
-                          ],
-                        )
-                      : SizedBox(),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    child: SmallTextButton(
-                            buttonText: globals.library_edit_mode == 1? 'edit' : "done",
-                            onPressed: () {
-                              setState(
-                                () {
-                                  globals.library_edit_mode == 0
-                                      ? globals.library_edit_mode = 1
-                                      : globals.library_edit_mode = 0;
-                                  // Navigator.of(context).popUntil((route) => route.isFirst);
-                                  Navigator.of(context).pushReplacement(
-                                    _createRoute(
-                                      const HomePage(),
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                          ),
+                            // '/home',
+                          );
+                        },
+                      );
+                    },
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Expanded(
-            flex: globals.library_edit_mode == 1 ? 6 : 8,
-            child:
-            globals.library_edit_mode == 1
-                ? BookLIstView(
-                    books: widget.books,
-                  )
-                : EditBookLIstView(
-                    books: widget.books,
-                  ),
+            flex: 6,
+            child: BookLIstView(
+              books: widget.books,
+            ),
           ),
         ],
       ),
@@ -98,8 +90,8 @@ Route _createRoute(Widget destination) {
     pageBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation) =>
         destination,
-    transitionDuration: const Duration(milliseconds: 1200),
-    reverseTransitionDuration: const Duration(milliseconds: 1200),
+    transitionDuration: const Duration(milliseconds: 600),
+    reverseTransitionDuration: const Duration(milliseconds: 600),
     transitionsBuilder: (BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
       return FadeTransition(
@@ -112,4 +104,3 @@ Route _createRoute(Widget destination) {
     },
   );
 }
-

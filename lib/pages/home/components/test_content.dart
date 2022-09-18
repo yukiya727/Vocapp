@@ -10,6 +10,7 @@ final List<Map> books = [
     "LastViewed": "2022-01-01",
     "Created": "2021-01-01",
     "isFavorite": false,
+    "chapters": {},
   },
   {
     "Name": "Book 2",
@@ -20,6 +21,29 @@ final List<Map> books = [
     "LastViewed": "2022-01-01",
     "Created": "2021-01-01",
     "isFavorite": true,
+    "chapters": {
+      "Chapter 1": {
+        "name": "Chapter 1",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 2": {
+        "name": "Chapter 2",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 3": {
+        "name": "Chapter 3",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+    }
   },
   {
     "Name": "Book 3",
@@ -30,6 +54,29 @@ final List<Map> books = [
     "LastViewed": "2022-01-01",
     "Created": "2021-01-01",
     "isFavorite": false,
+    "chapters": {
+      "Chapter 1": {
+        "name": "Chapter 1",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 2": {
+        "name": "Chapter 2",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 3": {
+        "name": "Chapter 3",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+    }
   },
   {
     "Name": "Book 1",
@@ -40,6 +87,29 @@ final List<Map> books = [
     "LastViewed": "2022-01-01",
     "Created": "2021-01-01",
     "isFavorite": false,
+    "chapters": {
+      "Chapter 1": {
+        "name": "Chapter 1",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 2": {
+        "name": "Chapter 2",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 3": {
+        "name": "Chapter 3",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+    }
   },
   {
     "Name": "Book 2",
@@ -50,6 +120,29 @@ final List<Map> books = [
     "LastViewed": "2022-01-01",
     "Created": "2021-01-01",
     "isFavorite": true,
+    "chapters": {
+      "Chapter 1": {
+        "name": "Chapter 1",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 2": {
+        "name": "Chapter 2",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 3": {
+        "name": "Chapter 3",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+    }
   },
   {
     "Name": "Book 3",
@@ -60,6 +153,29 @@ final List<Map> books = [
     "LastViewed": "2022-01-01",
     "Created": "2021-01-01",
     "isFavorite": false,
+    "chapters": {
+      "Chapter 1": {
+        "name": "Chapter 1",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 2": {
+        "name": "Chapter 2",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+      "Chapter 3": {
+        "name": "Chapter 3",
+        "Words": "100",
+        "Learned": "20",
+        "LastViewed": "2022-01-01",
+        "Created": "2021-01-01",
+      },
+    }
   },
 ];
 

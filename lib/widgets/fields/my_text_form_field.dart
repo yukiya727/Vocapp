@@ -5,8 +5,10 @@ class MyTextFormField extends StatelessWidget {
   const MyTextFormField({
     Key? key,
     required this.hint,
-    required this.icon,
+    this.icon = Icons.text_fields,
+    this.noBorder = false,
     required this.fillColor,
+    this.textColor,
     required this.inputType,
     required this.inputAction,
     required this.focusNode,
@@ -14,8 +16,10 @@ class MyTextFormField extends StatelessWidget {
   }) : super(key: key);
 
   final String hint;
-  final IconData icon;
+  final IconData? icon;
+  final bool noBorder;
   final Color fillColor;
+  final Color? textColor;
   final TextInputType inputType;
   final TextInputAction inputAction;
   final FocusNode focusNode;
@@ -27,7 +31,7 @@ class MyTextFormField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: TextFormField(
         style: focusNode.hasFocus
-            ? kBodyText3.copyWith(color: kPrimaryColor)
+            ? kBodyText3.copyWith(color: textColor ?? kPrimaryColor)
             : kInputHintStyle,
         cursorColor: kSecondaryColor3,
         keyboardType: inputType,
@@ -40,7 +44,7 @@ class MyTextFormField extends StatelessWidget {
           border: kInputBorder,
           enabledBorder: kInputBorder,
           hintText: hint,
-          hintStyle: kInputHintStyle,
+          hintStyle: kInputHintStyle.copyWith(color: textColor?.withOpacity(0.5) ?? kTextColor),
           contentPadding: EdgeInsets.all(0),
           // since we removed container remove content padding 0 to enable default padding for the field
           prefixIcon: Padding(
@@ -49,21 +53,21 @@ class MyTextFormField extends StatelessWidget {
               // height: 60,
               // this container height is causing the error
               decoration: BoxDecoration(
-                border: Border(
+                border: noBorder == true ? Border(
                   right: BorderSide(
                     width: 2,
                     color: kScaffoldBackground,
                   ),
-                ),
+                ) : null,
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Icon(
+                child: icon != null ? Icon(
                   icon,
                   color: focusNode.hasFocus
                       ? kPrimaryColor
-                      : kPrimaryColor2.withOpacity(0.5),
-                ),
+                      : kPrimaryColor.withOpacity(0.5),
+                ) : null,
               ),
             ),
           ),

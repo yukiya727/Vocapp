@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:vocapp/pages/books/chapter_page.dart';
 import '../../../size_configs.dart';
 import '../../../styles.dart';
 import '../methods/hero_transition_tween.dart';
@@ -42,50 +43,63 @@ class _BookLIstViewState extends State<BookLIstView> {
             },
             child:
             // index == 0
-                // ? Padding(
-                //     padding: EdgeInsets.all(20)
-                //         .copyWith(bottom: SizeV * 15),
-                //     child: GestureDetector(
-                //       onTap: () {
-                //         print('add new book');
-                //       },
-                //       child: Container(
-                //         decoration: BoxDecoration(
-                //           shape: BoxShape.circle,
-                //           color: kPrimaryColor,
-                //         ),
-                //         child: Icon(
-                //           Icons.add,
-                //           size: SizeV * 12,
-                //           color: kScaffoldBackground,
-                //         ),
-                //       ),
-                //     ),
-                //   )
-                // :
+            //     ? Padding(
+            //         padding: EdgeInsets.all(SizeH * 5)
+            //             .copyWith(bottom: SizeV * 15),
+            //         child: GestureDetector(
+            //           onTap: () {
+            //             print('add new book');
+            //           },
+            //           child: Container(
+            //             padding: EdgeInsets.all(20),
+            //             decoration: BoxDecoration(
+            //               shape: BoxShape.circle,
+            //               color: kPrimaryColor,
+            //             ),
+            //             child: Icon(
+            //               Icons.add,
+            //               size: SizeV * 10,
+            //               color: kScaffoldBackground,
+            //             ),
+            //           ),
+            //         ),
+            //       )
+            //     :
               Column(
                     children: [
-                      Card(
-                        margin: const EdgeInsets.all(20.0),
-                        elevation: 5.0,
-                        borderOnForeground: false,
-                        color: kSecondaryColor3,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0)),
-                        child: AspectRatio(
-                          aspectRatio: 3 / 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                widget.books[index]['Name'],
-                                style: kBodyText2,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ChapterPage(
+                                book: widget.books[index],
                               ),
-                              Text(
-                                widget.books[index]['LanguageType'],
-                                style: kBodyText4,
-                              ),
-                            ],
+                            ),
+                          );
+                        },
+                        child: Card(
+                          margin: const EdgeInsets.all(20.0),
+                          elevation: 5.0,
+                          borderOnForeground: false,
+                          color: kSecondaryColor3,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50.0)),
+                          child: AspectRatio(
+                            aspectRatio: 3 / 4,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  widget.books[index]['Name'],
+                                  style: kBodyText2,
+                                ),
+                                Text(
+                                  widget.books[index]['LanguageType'],
+                                  style: kBodyText4,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
