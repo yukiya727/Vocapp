@@ -40,10 +40,10 @@ Future<bool> checkBookExists(Book book) async {
   return bookExists != null;
 }
 
-Future<bool> checkChapterExists(Book book, Map chapter) async {
+Future<bool> checkChapterExists(Book book, String chapterName) async {
   final bookExists = await bookStorage.read(book.name);
   if (bookExists != null) {
-    return bookExists.chapters.containsKey(chapter['name']);
+    return bookExists.chapters.containsKey(chapterName);
   }
   print("Error: Book does not exist!");
   return false;
