@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vocapp/test/test.dart';
 
 import '../../../size_configs.dart';
 import '../../../styles.dart';
@@ -13,7 +14,7 @@ class LibraryView extends StatefulWidget {
     required this.books,
   }) : super(key: key);
 
-  final List<Map> books;
+  final List<Book> books;
 
   @override
   State<LibraryView> createState() => _LibraryViewState();
@@ -28,10 +29,10 @@ class _LibraryViewState extends State<LibraryView> {
   @override
   Widget build(BuildContext context) {
     final SizeV = SizeConfig.blockSizeV!;
-    final SizeH = SizeConfig.blockSizeHorizontal!;
+    final SizeH = SizeConfig.blockSizeH!;
 
     return Scaffold(
-      backgroundColor: kScaffoldBackground,
+      // backgroundColor: kScaffoldBackground,
       body: Column(
         children: [
           Padding(
@@ -50,25 +51,44 @@ class _LibraryViewState extends State<LibraryView> {
                     ),
                   ],
                 ),
-                Container(
-                  alignment: Alignment.centerRight,
-                  child: SmallTextButton(
-                    buttonText: 'edit',
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SmallTextButton(
+                    buttonText: 'add',
                     onPressed: () {
                       setState(
-                        () {
-                          globals.library_edit_mode = 1;
+                            () {
+                          // globals.library_edit_mode = 1;
                           // Navigator.of(context).popUntil((route) => route.isFirst);
-                          Navigator.of(context).push(
-                            _createRoute(
-                              LibraryEditView(books: widget.books),
-                            ),
+                          // Navigator.of(context).push(
+                          //   _createRoute(
+                          //     LibraryEditView(books: widget.books),
+                          //   ),
                             // '/home',
-                          );
+                          // );
                         },
                       );
                     },
                   ),
+                    SmallTextButton(
+                      buttonText: 'edit',
+                      onPressed: () {
+                        setState(
+                          () {
+                            globals.library_edit_mode = 1;
+                            // Navigator.of(context).popUntil((route) => route.isFirst);
+                            Navigator.of(context).push(
+                              _createRoute(
+                                LibraryEditView(books: widget.books),
+                              ),
+                              // '/home',
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),

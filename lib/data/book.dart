@@ -5,6 +5,7 @@ class Book {
   final String language_type;
   final String tag;
   final bool isFavorite;
+  late int id;
   final int word_count;
   final int learned_count;
   final DateTime last_viewed;
@@ -20,6 +21,7 @@ class Book {
     required this.language_type,
     required this.tag,
     required this.isFavorite,
+    required this.id,
     required this.word_count,
     required this.learned_count,
     required this.last_viewed,
@@ -54,6 +56,7 @@ class Book {
         language_type: json['language_type'] as String,
         tag: json['tag'] as String,
         isFavorite: json['isFavorite'] as bool,
+        id: json['id'] as int,
         word_count: json['word_count'] as int,
         learned_count: json['learned_count'] as int,
         last_viewed: DateTime.parse(json["last_viewed"]),
@@ -71,6 +74,11 @@ class Book {
 
   factory Book.fromJson(Map<String, dynamic> json) => Book.readJson(json);
 
+  int createId() {
+    int id = DateTime.now().millisecondsSinceEpoch;
+    return id;
+  }
+
   Book createEmptyBook(
       name, type, language_type, tag, word_count, learned_count) {
     // Create a new book
@@ -80,6 +88,7 @@ class Book {
       language_type: language_type,
       tag: tag,
       isFavorite: false,
+      id: createId(),
       word_count: word_count,
       learned_count: learned_count,
       last_viewed: DateTime.now(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:vocapp/test/test.dart';
 import '../../../size_configs.dart';
 import '../../../styles.dart';
 import '../methods/hero_transition_tween.dart';
@@ -10,7 +11,7 @@ class EditBookLIstView extends StatefulWidget {
     required this.books,
   }) : super(key: key);
 
-  final List<Map> books;
+  final List<Book> books;
 
   @override
   _EditBookLIstViewState createState() => _EditBookLIstViewState();
@@ -29,8 +30,8 @@ class _EditBookLIstViewState extends State<EditBookLIstView> {
 
   @override
   Widget build(BuildContext context) {
-    final SizeV = SizeConfig.blockSizeV!;
-    final SizeH = SizeConfig.blockSizeHorizontal!;
+    // final SizeV = SizeConfig.blockSizeV!;
+    // final SizeH = SizeConfig.blockSizeH!;
 
     return
       AnnotatedRegion<SystemUiOverlayStyle>(
@@ -62,11 +63,11 @@ class _EditBookLIstViewState extends State<EditBookLIstView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        widget.books[index]['Name'],
+                        widget.books[index].name,
                         style: kBodyText4,
                       ),
                       Text(
-                        widget.books[index]['LanguageType'],
+                        widget.books[index].language_type,
                         style: kBodyText4,
                       ),
                     ],

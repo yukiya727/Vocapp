@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vocapp/pages/home/components/stats_details.dart';
+import 'package:vocapp/test/test.dart';
 
 import '../../../styles.dart';
 
@@ -9,7 +10,7 @@ class StatsView extends StatefulWidget {
     required this.books,
   }) : super(key: key);
 
-  final List<Map> books;
+  final List<Book> books;
 
   @override
   _StatsViewState createState() => _StatsViewState();

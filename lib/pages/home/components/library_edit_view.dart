@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vocapp/test/test.dart';
 
 import '../../../styles.dart';
 import '../../../widgets/buttons/small_text_button.dart';
@@ -12,7 +13,7 @@ class LibraryEditView extends StatefulWidget {
     required this.books,
   }) : super(key: key);
 
-  final List<Map> books;
+  final List<Book> books;
 
   @override
   State<LibraryEditView> createState() => _LibraryEditViewState();

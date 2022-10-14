@@ -1,182 +1,40 @@
+import '../../../data/book.dart';
 import '../../../styles.dart';
 
-final List<Map> books = [
-  {
-    "Name": "Book 1",
-    "Type": "language",
-    "LanguageType": "ES",
-    "Words": "100",
-    "Learned": "20",
-    "LastViewed": "2022-01-01",
-    "Created": "2021-01-01",
-    "isFavorite": false,
-    "chapters": {},
-  },
-  {
-    "Name": "Book 2",
-    "Type": "language",
-    "LanguageType": "SV",
-    "Words": "100",
-    "Learned": "20",
-    "LastViewed": "2022-01-01",
-    "Created": "2021-01-01",
-    "isFavorite": true,
-    "chapters": {
-      "Chapter 1": {
-        "name": "Chapter 1",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 2": {
-        "name": "Chapter 2",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 3": {
-        "name": "Chapter 3",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-    }
-  },
-  {
-    "Name": "Book 3",
-    "Type": "language",
-    "LanguageType": "ZH",
-    "Words": "100",
-    "Learned": "20",
-    "LastViewed": "2022-01-01",
-    "Created": "2021-01-01",
-    "isFavorite": false,
-    "chapters": {
-      "Chapter 1": {
-        "name": "Chapter 1",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 2": {
-        "name": "Chapter 2",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 3": {
-        "name": "Chapter 3",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-    }
-  },
-  {
-    "Name": "Book 1",
-    "Type": "language",
-    "LanguageType": "ES",
-    "Words": "100",
-    "Learned": "20",
-    "LastViewed": "2022-01-01",
-    "Created": "2021-01-01",
-    "isFavorite": false,
-    "chapters": {
-      "Chapter 1": {
-        "name": "Chapter 1",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 2": {
-        "name": "Chapter 2",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 3": {
-        "name": "Chapter 3",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-    }
-  },
-  {
-    "Name": "Book 2",
-    "Type": "language",
-    "LanguageType": "SV",
-    "Words": "100",
-    "Learned": "20",
-    "LastViewed": "2022-01-01",
-    "Created": "2021-01-01",
-    "isFavorite": true,
-    "chapters": {
-      "Chapter 1": {
-        "name": "Chapter 1",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 2": {
-        "name": "Chapter 2",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 3": {
-        "name": "Chapter 3",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-    }
-  },
-  {
-    "Name": "Book 3",
-    "Type": "language",
-    "LanguageType": "ZH",
-    "Words": "100",
-    "Learned": "20",
-    "LastViewed": "2022-01-01",
-    "Created": "2021-01-01",
-    "isFavorite": false,
-    "chapters": {
-      "Chapter 1": {
-        "name": "Chapter 1",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 2": {
-        "name": "Chapter 2",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-      "Chapter 3": {
-        "name": "Chapter 3",
-        "Words": "100",
-        "Learned": "20",
-        "LastViewed": "2022-01-01",
-        "Created": "2021-01-01",
-      },
-    }
-  },
+final List<Book> books = [
+  Book(
+    name: "Book 1",
+    type: "language",
+    language_type: "ES",
+    tag: "test",
+    isFavorite: false,
+    id: 1,
+    word_count: 100,
+    learned_count: 0,
+    last_viewed: DateTime.now(),
+    created_time: DateTime.now(),
+    logs: [],
+    starred_words: [],
+    chapters: {},
+  ),
+  Book(
+    name: "Book 2",
+    type: "language",
+    language_type: "JP",
+    tag: "test",
+    isFavorite: true,
+    id: 2,
+    word_count: 100,
+    learned_count: 50,
+    last_viewed: DateTime.now(),
+    created_time: DateTime.now(),
+    logs: [
+      {"date": DateTime.now().toIso8601String(), "words": 10},
+      {"date": DateTime.now().toIso8601String(), "words": 20},
+    ],
+    starred_words: [],
+    chapters: {},
+  )
 ];
 
 List stats = [

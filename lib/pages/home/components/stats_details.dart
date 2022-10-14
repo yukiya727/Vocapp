@@ -40,7 +40,7 @@ class _StatsDetailsViewState extends State<StatsDetailsView> {
   @override
   Widget build(BuildContext context) {
     final SizeV = SizeConfig.blockSizeV!;
-    final SizeH = SizeConfig.blockSizeHorizontal!;
+    final SizeH = SizeConfig.blockSizeH!;
 
     return TabBarView(
       physics: const NeverScrollableScrollPhysics(),

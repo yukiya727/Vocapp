@@ -6,6 +6,9 @@ import '../data/book.dart';
 import 'package:flutter/material.dart';
 import 'package:local_value/local_value.dart';
 
+export '../data/user_stats.dart';
+export '../data/book.dart';
+
 class CounterObj {
   final int id;
   final String name;
@@ -21,6 +24,41 @@ class CounterObj {
         json['id'] as int,
         json['name'] as String,
       );
+}
+
+final bookStorage = LocalValue<Book>(
+  fromJson: Book.fromJson,
+  toJson: (currentBook) => currentBook.toJson(),
+);
+
+void writeBook(Book book) async {
+  await bookStorage.write(book.id.toString(), book);
+}
+
+Future<bool> checkBookExists(Book book) async {
+  final bookExists = await bookStorage.read(book.createId().toString());
+  return bookExists != null;
+}
+
+Future<bool> checkChapterExists(Book book, Map chapter) async {
+  final bookExists = await bookStorage.read(book.name);
+  if (bookExists != null) {
+    return bookExists.chapters.containsKey(chapter['name']);
+  }
+  print("Error: Book does not exist!");
+  return false;
+}
+
+void writeChapter(Book book, Map chapter) async {
+  book.chapters[chapter['name']] = chapter;
+  // await bookStorage.write(book.name, book);
+  bool bookExists = await checkBookExists(book);
+  if (!bookExists) {
+    print("Error: Book does not exist, please create book first before adding chapters.");
+  }
+  else {
+    writeBook(book);
+  }
 }
 
 void main() async {
@@ -46,10 +84,11 @@ void main() async {
   print(counter3?.name);
   print("#################################################\n");
 
-  final bookStorage = LocalValue<Book>(
-    fromJson: Book.fromJson,
-    toJson: (currentBook) => currentBook.toJson(),
-  );
+  // book data manipulation
+
+
+
+  // -------------------- testing part --------------------
 
   Book book1 = Book(
     name: "Book 1",
@@ -57,6 +96,7 @@ void main() async {
     language_type: "ES",
     tag: "tag",
     isFavorite: true,
+    id: 1,
     word_count: 100,
     learned_count: 50,
     last_viewed: DateTime.now(),
@@ -78,6 +118,7 @@ void main() async {
     language_type: "DE",
     tag: "tag",
     isFavorite: true,
+    id: 2,
     word_count: 100,
     learned_count: 50,
     last_viewed: DateTime.now(),
