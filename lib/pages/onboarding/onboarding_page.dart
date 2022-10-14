@@ -41,7 +41,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     // initialize size config
     SizeConfig().init(context);
     double sizeV = SizeConfig.blockSizeV!;
-    double sizeH = SizeConfig.blockSizeHorizontal!;
+    double sizeH = SizeConfig.blockSizeH!;
 
     return Scaffold(
       backgroundColor: Colors.white,

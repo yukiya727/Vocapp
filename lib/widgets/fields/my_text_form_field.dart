@@ -9,6 +9,7 @@ class MyTextFormField extends StatelessWidget {
     this.noBorder = false,
     required this.fillColor,
     this.textColor,
+    this.controller,
     required this.inputType,
     required this.inputAction,
     required this.focusNode,
@@ -20,6 +21,7 @@ class MyTextFormField extends StatelessWidget {
   final bool noBorder;
   final Color fillColor;
   final Color? textColor;
+  final TextEditingController? controller;
   final TextInputType inputType;
   final TextInputAction inputAction;
   final FocusNode focusNode;
@@ -30,10 +32,13 @@ class MyTextFormField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       child: TextFormField(
-        style: focusNode.hasFocus
-            ? kBodyText3.copyWith(color: textColor ?? kPrimaryColor)
-            : kInputHintStyle,
+        style:
+        // focusNode.hasFocus ?
+        kBodyText3.copyWith(color: textColor ?? kPrimaryColor),
+            // : kBodyText3.copyWith(color: textColor ?? kPrimaryColor),
+            // : kInputHintStyle,
         cursorColor: kSecondaryColor3,
+        controller: controller,
         keyboardType: inputType,
         textInputAction: inputAction,
         focusNode: focusNode,

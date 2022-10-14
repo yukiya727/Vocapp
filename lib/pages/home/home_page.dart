@@ -29,6 +29,9 @@ class _HomePageState extends State<HomePage> {
       value: SystemUiOverlayStyle(
         statusBarColor: kScaffoldBackground, //top status bar
         systemNavigationBarColor: kPrimaryColor, //bottom bar
+        statusBarIconBrightness: Brightness.dark, // status bar icons' color
+        systemNavigationBarIconBrightness:
+        Brightness.dark,
       ),
       child: SafeArea(
         child: Scaffold(

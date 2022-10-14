@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:vocapp/pages/authentication/login_page.dart';
+import 'package:vocapp/pages/books/providers/cover_style.dart';
 import 'package:vocapp/pages/onboarding/onboarding_page.dart';
 import 'package:vocapp/pages/home/home_page.dart';
 import 'package:vocapp/styles.dart';
@@ -21,7 +23,14 @@ Future<void> main() async {
 
   init_globals();
 
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CoverStyle()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +42,6 @@ class MyApp extends StatelessWidget {
         statusBarColor: kScaffoldBackground, //top status bar
         systemNavigationBarColor: kScaffoldBackground, //bottom bar
         statusBarIconBrightness: Brightness.dark, // status bar icons' color
-
         systemNavigationBarIconBrightness:
             Brightness.dark, //navigation bar icons' color
       ),

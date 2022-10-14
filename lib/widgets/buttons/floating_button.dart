@@ -11,6 +11,7 @@ class FloatingButton extends StatelessWidget {
     this.isFloating = false,
     this.widthX = 1.0,
     this.iconSizeX = 1.0,
+    this.shadowColor,
     required this.onPressed,
     required this.bgColor,
     required this.buttonIcon,
@@ -22,9 +23,10 @@ class FloatingButton extends StatelessWidget {
   final double iconSizeX;
   final VoidCallback onPressed;
   final Color bgColor;
+  final Color? shadowColor;
   final IconData buttonIcon;
-  final blockSizeH = SizeConfig.blockSizeHorizontal;
-  final blockSizeV = SizeConfig.blockSizeHorizontal;
+  final blockSizeH = SizeConfig.blockSizeH;
+  final blockSizeV = SizeConfig.blockSizeH;
   final screenWidth = SizeConfig.screenWidth;
 
   @override
@@ -40,7 +42,9 @@ class FloatingButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: shadowColor == null ?
+                  Colors.black.withOpacity(0.2) : HSLColor.fromColor(shadowColor!).withLightness(0.25)
+                  .toColor().withOpacity(0.3),
               spreadRadius: 1,
               blurRadius: 3,
               offset: Offset(0, 3), // changes position of shadow

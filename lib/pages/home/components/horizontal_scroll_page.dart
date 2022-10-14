@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:vocapp/pages/books/chapter_page.dart';
+import 'package:vocapp/test/test.dart';
 import '../../../size_configs.dart';
 import '../../../styles.dart';
 import '../methods/hero_transition_tween.dart';
@@ -10,7 +11,7 @@ class BookLIstView extends StatefulWidget {
     required this.books,
   });
 
-  final List<Map> books;
+  final List<Book> books;
 
   @override
   State<BookLIstView> createState() => _BookLIstViewState();
@@ -30,7 +31,7 @@ class _BookLIstViewState extends State<BookLIstView> {
   @override
   Widget build(BuildContext context) {
     final SizeV = SizeConfig.blockSizeV!;
-    final SizeH = SizeConfig.blockSizeHorizontal!;
+    final SizeH = SizeConfig.blockSizeH!;
     return PageView(
       controller: _controller,
       children: <Hero>[
@@ -91,11 +92,11 @@ class _BookLIstViewState extends State<BookLIstView> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  widget.books[index]['Name'],
+                                  widget.books[index].name,
                                   style: kBodyText2,
                                 ),
                                 Text(
-                                  widget.books[index]['LanguageType'],
+                                  widget.books[index].language_type,
                                   style: kBodyText4,
                                 ),
                               ],

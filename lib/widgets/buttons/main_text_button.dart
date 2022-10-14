@@ -13,8 +13,8 @@ class MainTextButton extends StatelessWidget {
   final String buttonName;
   final VoidCallback onPressed;
   final Color bgColor;
-  final blockSizeH = SizeConfig.blockSizeHorizontal;
-  final blockSizeV = SizeConfig.blockSizeHorizontal;
+  final blockSizeH = SizeConfig.blockSizeH;
+  final blockSizeV = SizeConfig.blockSizeH;
 
   @override
   Widget build(BuildContext context) {

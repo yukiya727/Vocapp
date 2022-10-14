@@ -6,7 +6,7 @@ class SizeConfig {
   static double? screenWidth;
   static double? screenHeight;
   static double? screenRatio;
-  static double? blockSizeHorizontal;
+  static double? blockSizeH;
   static double? blockSizeV;
 
   void init(BuildContext context) {
@@ -14,7 +14,7 @@ class SizeConfig {
     screenWidth = queryData!.size.width;
     screenHeight = queryData!.size.height;
     screenRatio = queryData!.devicePixelRatio;
-    blockSizeHorizontal = screenWidth! / 100;
+    blockSizeH = screenWidth! / 100;
     blockSizeV = screenHeight! / 100;
   }
 }
