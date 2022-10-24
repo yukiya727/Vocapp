@@ -56,13 +56,14 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: kScaffoldBackground,
         ),
         routes: {
-          '/': (context) => OnBoardingPage(),
-          '/login': (context) => LoginPage(),
-          '/home': (context) => HomePage(),
+          '/': (context) => HomePage(),
+          // '/onBoarding': (context) => OnBoardingPage(),
+          // '/login': (context) => LoginPage(),
+          // ''
         },
         // initialRoute: seenOnboard == false
-        //     ? '/' : '/login',
-        initialRoute: '/home',
+        //     ? '/onBoarding' : '/login',
+        initialRoute: '/',
       ),
     );
   }

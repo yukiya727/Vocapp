@@ -1,4 +1,3 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../data/user_stats.dart';
@@ -9,39 +8,27 @@ import 'package:local_value/local_value.dart';
 export '../data/user_stats.dart';
 export '../data/book.dart';
 
-class CounterObj {
-  final int id;
-  final String name;
-
-  CounterObj(this.id, this.name);
-
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-      };
-
-  factory CounterObj.fromJson(Map<String, dynamic> json) => CounterObj(
-        json['id'] as int,
-        json['name'] as String,
-      );
-}
-
 final bookStorage = LocalValue<Book>(
   fromJson: Book.fromJson,
   toJson: (currentBook) => currentBook.toJson(),
 );
 
 void writeBook(Book book) async {
+  print(book.id);
   await bookStorage.write(book.id.toString(), book);
 }
 
+void deleteBook(Book book) async {
+  await bookStorage.delete(book.id.toString());
+}
+
 Future<bool> checkBookExists(Book book) async {
-  final bookExists = await bookStorage.read(book.createId().toString());
+  final bookExists = await bookStorage.read(book.id.toString());
   return bookExists != null;
 }
 
 Future<bool> checkChapterExists(Book book, String chapterName) async {
-  final bookExists = await bookStorage.read(book.name);
+  final bookExists = await bookStorage.read(book.id.toString());
   if (bookExists != null) {
     return bookExists.chapters.containsKey(chapterName);
   }
@@ -55,11 +42,29 @@ void writeChapter(Book book, Map chapter) async {
   bool bookExists = await checkBookExists(book);
   if (!bookExists) {
     print("Error: Book does not exist, please create book first before adding chapters.");
+    return;
   }
-  else {
-    writeBook(book);
-  }
+  writeBook(book);
 }
+
+class CounterObj {
+  final int id;
+  final String name;
+
+  CounterObj(this.id, this.name);
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'name': name,
+  };
+
+  factory CounterObj.fromJson(Map<String, dynamic> json) => CounterObj(
+    json['id'] as int,
+    json['name'] as String,
+  );
+}
+
+// -------------------- testing part --------------------
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -75,7 +80,7 @@ void main() async {
 
   // Save the user
   await counterStorage.write("1", counter1);
-  await counterStorage.write("2", counter2);
+  await counterStorage.write(counter2.id.toString(), counter2);
 
   // Read the user
   final counter3 = await counterStorage.read("2");
@@ -88,7 +93,6 @@ void main() async {
 
 
 
-  // -------------------- testing part --------------------
 
   Book book1 = Book(
     name: "Book 1",
@@ -128,19 +132,30 @@ void main() async {
     chapters: {},
   );
 
-  await bookStorage.write("Book 1", book1);
-  await bookStorage.write(book2.name, book2);
+  await bookStorage.write("1", book1);
+  await bookStorage.write(book2.id.toString(), book2);
 
-  var tempBook = await bookStorage.read(book1.name);
-  print(tempBook?.name);
-  tempBook = await bookStorage.read(book2.name);
-  print(tempBook?.name);
+  print(book1.id.toString());
+  var tempBook1 = await bookStorage.read("1");
+  print(tempBook1?.name);
+
+
+  var tempBook = await bookStorage.read(book1.id.toString());
+  print(tempBook?.id.toString());
+  tempBook = await bookStorage.read(book2.id.toString());
+  print(tempBook?.id.toString());
+
+  var bookExists = await checkBookExists(book2);
 
   // clear all data
-  await bookStorage.delete(book1.name);
-  await bookStorage.delete(book2.name);
-  tempBook = await bookStorage.read(book1.name);
-  print(tempBook?.name);
+  await bookStorage.delete(book1.id.toString());
+  await bookStorage.delete(book2.id.toString());
+  bookExists = await checkBookExists(book1);
+  print(bookExists);
+  if (!bookExists) {
+    print("Book 1 does not exist!");
+  }
+
 
   // UserStats user1 = UserStats(
   //   user_name: "John",

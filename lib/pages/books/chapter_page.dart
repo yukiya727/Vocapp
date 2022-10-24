@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:vocapp/pages/books/providers/cover_style.dart';
 import 'package:vocapp/styles.dart';
 
-import '../../data/book.dart';
 import '../../test/test.dart';
 import '../../size_configs.dart';
 import '../../styles.dart';
@@ -48,10 +47,10 @@ class _ChapterPageState extends State<ChapterPage>
   void initState() {
     super.initState();
 
+    createBookIfNull();
+
     _nameFocusNodes.forEach((element) {
-      element.addListener(() {
-        setState(() {});
-      });
+      element.addListener(() {});
     });
 
     _controller = AnimationController(
@@ -86,13 +85,9 @@ class _ChapterPageState extends State<ChapterPage>
     );
     _styleController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        setState(() {
-          edit_style = true;
-        });
+        edit_style = true;
       } else {
-        setState(() {
-          edit_style = false;
-        });
+        edit_style = false;
       }
     });
   }
@@ -131,17 +126,32 @@ class _ChapterPageState extends State<ChapterPage>
     });
   }
 
-  void onCreate() {
+  Future<void> onCreate() async {
+    final chapterName = await chapterNameController.text;
+    if (chapterName == "") {
+      // context.showSnackBar(content: Text("You can't make chapter without name"),
+      //     actionText: Text("Undo"), action: () {});
+      print("Error: chapter name is null / empty.");
+      return;
+    }
+
+    var chapterCreated = false; // necessary?
     if (_nameKey.currentState!.validate()) {
       _nameKey.currentState!.save();
-      addChapter(true);
+      chapterCreated = await addChapter(true);
+    }
+    if (chapterCreated) {
+      setState(() {
+        FocusManager.instance.primaryFocus?.unfocus();
+        adding_mode ? _controller.reverse() : _controller.forward();
+      });
     }
   }
 
   List getStyleButtonInfo() {
     if (_styleButtonKey.currentContext != null) {
       final RenderBox renderBox =
-      _styleButtonKey.currentContext?.findRenderObject() as RenderBox;
+          _styleButtonKey.currentContext?.findRenderObject() as RenderBox;
       final position = renderBox.localToGlobal(Offset.zero);
       return [position.dx, position.dy];
     } else {
@@ -152,7 +162,7 @@ class _ChapterPageState extends State<ChapterPage>
   List getMenuBarSize() {
     if (_styleButtonKey.currentContext != null) {
       final RenderBox renderBox =
-      _menuBarKey.currentContext?.findRenderObject() as RenderBox;
+          _menuBarKey.currentContext?.findRenderObject() as RenderBox;
       final size = renderBox.size;
       return [size.width, size.height];
     } else {
@@ -161,10 +171,9 @@ class _ChapterPageState extends State<ChapterPage>
   }
 
   List getStyleMenuSize() {
-
     if (_styleButtonKey.currentContext != null) {
       final RenderBox renderBox =
-      _styleMenuKey.currentContext?.findRenderObject() as RenderBox;
+          _styleMenuKey.currentContext?.findRenderObject() as RenderBox;
       final size = renderBox.size;
       return [size.width, size.height];
     } else {
@@ -172,41 +181,47 @@ class _ChapterPageState extends State<ChapterPage>
     }
   }
 
-  Future<void> addChapter(bool? addBookIfNull) async {
+  Future<bool> addChapter(bool? addBookIfNull) async {
+    // set default value to addBookIfNull
     if (addBookIfNull == null) {
       addBookIfNull = false;
     }
-    checkBookExists(widget.book).then((bookExists) {
-      if (!bookExists && addBookIfNull!) {
-        print("Error: Book doesn't exist, creating new book in database");
-        writeBook(widget.book);
-      }
-      else if (!bookExists && !addBookIfNull!) {
-        print("Error: Book doesn't exist, please create a new book first");
-      }
-    });
 
-    checkChapterExists(widget.book, chapterNameController.text).then((
-        chapterExists) {
-      if (chapterExists) {
-        print("Error: Chapter already exists");
-        return;
-      }
-    });
+    final bookExists = await checkBookExists(widget.book);
+    if (!bookExists && addBookIfNull) {
+      print("Error: Book doesn't exist, creating new book in database");
+      writeBook(widget.book);
+    } else if (!bookExists && !addBookIfNull) {
+      print("Error: Book doesn't exist, please create a new book first");
+      return false;
+    }
 
-      widget.book.chapters[chapterNameController.text] =
-      {
-        'name': chapterNameController.text,
-        'style': {
-          'color': styleColor.value,
-          'icon': Icons.menu_book_outlined,
-        },
-        'words': [],
-        "LastViewed": DateTime.now().toIso8601String(),
-        "Created": DateTime.now().toIso8601String(),
-      };
+    final chapterExists =
+        await checkChapterExists(widget.book, chapterNameController.text);
+    if (chapterExists) {
+      print("Error: Chapter already exists");
+      return false;
+    }
 
+    widget.book.chapters[chapterNameController.text] = {
+      'name': chapterNameController.text,
+      'style': {
+        'color': styleColor.value,
+      },
+      'words': [],
+      "LastViewed": DateTime.now().toIso8601String(),
+      "Created": DateTime.now().toIso8601String(),
+    };
     writeChapter(widget.book, widget.book.chapters[chapterNameController.text]);
+    return true;
+  }
+
+  Future<void> createBookIfNull() async {
+    final bookExists = await checkBookExists(widget.book);
+    if (!bookExists) {
+      print("Error: Book doesn't exist, creating new book in database");
+      writeBook(widget.book);
+    }
   }
 
   @override
@@ -243,6 +258,7 @@ class _ChapterPageState extends State<ChapterPage>
                           size: SizeH * 8,
                         ),
                         onPressed: () {
+                          dispose();
                           Navigator.pop(
                             context,
                           );
@@ -270,16 +286,18 @@ class _ChapterPageState extends State<ChapterPage>
                                   child: Center(
                                     child: Column(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          // widget.book['chapters'][chapterKey]['name'],
+                                            // widget.book['chapters'][chapterKey]['name'],
                                             chapterKey,
                                             style: kBodyText3),
                                         Text(
-                                            widget.book.chapters[chapterKey]
-                                            ['Words']
-                                                .toString() +
+                                            widget
+                                                    .book
+                                                    .chapters[chapterKey]
+                                                        ['Words']
+                                                    .toString() +
                                                 " words",
                                             style: kBodyText4),
                                       ],
@@ -327,7 +345,7 @@ class _ChapterPageState extends State<ChapterPage>
                         ),
                         Padding(
                             padding:
-                            EdgeInsets.symmetric(horizontal: SizeH * 10)),
+                                EdgeInsets.symmetric(horizontal: SizeH * 10)),
                         FloatingButton(
                           bgColor: kPrimaryColor,
                           buttonIcon: Icons.menu_book_rounded,
@@ -342,7 +360,7 @@ class _ChapterPageState extends State<ChapterPage>
                     builder: (context, child) {
                       return Transform.translate(
                         offset:
-                        Offset(0.0, SizeV * 26 * (1 - _controller.value)),
+                            Offset(0.0, SizeV * 26 * (1 - _controller.value)),
                         child: child,
                       );
                     },
@@ -363,7 +381,7 @@ class _ChapterPageState extends State<ChapterPage>
                               spreadRadius: 2,
                               blurRadius: 5,
                               offset:
-                              Offset(0, 3), // changes position of shadow
+                                  Offset(0, 3), // changes position of shadow
                             ),
                           ],
                         ),
@@ -376,7 +394,7 @@ class _ChapterPageState extends State<ChapterPage>
                                 children: [
                                   Padding(
                                       padding:
-                                      EdgeInsets.only(left: SizeH * 9)),
+                                          EdgeInsets.only(left: SizeH * 9)),
                                   Text(
                                     "Name",
                                     style: kBodyText3.copyWith(
@@ -397,7 +415,11 @@ class _ChapterPageState extends State<ChapterPage>
                                         inputType: TextInputType.text,
                                         inputAction: TextInputAction.next,
                                         focusNode: _nameFocusNodes[0],
-                                        validator: nameValidator,
+                                        validator: (value) =>
+                                            chapterNameValidator(
+                                                    widget.book, value)
+                                                ? null
+                                                : "Chapter name illegal.",
                                       ),
                                     ),
                                   ),
@@ -409,7 +431,7 @@ class _ChapterPageState extends State<ChapterPage>
                                 children: [
                                   Padding(
                                       padding:
-                                      EdgeInsets.only(left: SizeH * 10)),
+                                          EdgeInsets.only(left: SizeH * 10)),
                                   Text(
                                     "Style",
                                     style: kBodyText3.copyWith(
@@ -430,10 +452,12 @@ class _ChapterPageState extends State<ChapterPage>
                                           .watch<CoverStyle>()
                                           .selectedColor,
                                       onPressed: () {
-                                        FocusManager.instance.primaryFocus
-                                            ?.unfocus();
-                                        print(chapterNameController.text);
+                                        setState(() {
+                                          FocusManager.instance.primaryFocus
+                                              ?.unfocus();
+                                        });
                                         onEditStyle();
+                                        // print(chapterNameController.text);
                                       },
                                     ),
                                   ),
@@ -461,6 +485,9 @@ class _ChapterPageState extends State<ChapterPage>
                                     buttonIcon: Icons.cancel,
                                     onPressed: () {
                                       onEdit();
+                                      FocusManager.instance.primaryFocus
+                                          ?.unfocus();
+                                      // Navigator.pushReplacementNamed(context, '/chapterManager');
                                     },
                                   ),
                                 ],
@@ -523,9 +550,9 @@ class _ChapterPageState extends State<ChapterPage>
                                         //     padding: EdgeInsets.only(top: SizeV * 1)),
                                         Expanded(
                                             child: ColorPalette(
-                                              onChange: onStyleColorChange,
-                                              selectedColor: styleColor,
-                                            )),
+                                          onChange: onStyleColorChange,
+                                          selectedColor: styleColor,
+                                        )),
                                       ],
                                     ),
                                   ),

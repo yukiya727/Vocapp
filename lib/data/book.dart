@@ -5,7 +5,7 @@ class Book {
   final String language_type;
   final String tag;
   final bool isFavorite;
-  late int id;
+  final int id;
   final int word_count;
   final int learned_count;
   final DateTime last_viewed;
@@ -39,6 +39,7 @@ class Book {
       'language_type': language_type,
       'tag': tag,
       'isFavorite': isFavorite,
+      'id': id,
       'word_count': word_count,
       'learned_count': learned_count,
       'last_viewed': last_viewed.toIso8601String(),

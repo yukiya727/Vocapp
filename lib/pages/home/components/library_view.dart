@@ -94,7 +94,7 @@ class _LibraryViewState extends State<LibraryView> {
             ),
           ),
           Expanded(
-            flex: 6,
+            // flex: 6,
             child: BookLIstView(
               books: widget.books,
             ),
