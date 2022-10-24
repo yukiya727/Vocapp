@@ -1,0 +1,37 @@
+GREETING 1
+SEE TIP
+1 . 你, 好
+2 . 再见, 再, 见
+
+NUMBERS
+SEE TIP
+1 . 三, 一, 七, 八
+2 . 十, 零, 元
+3 . 五, 九, 百
+4 . 二, 四, 六
+
+NAME
+SEE TIP
+1 . 叫, 我, 张, 李, 华, 明
+2 . 名字, 什么, 名, 字, 什, 么
+3 . 姓, 王, 呢
+
+GREETING 2
+SEE TIP
+1 . 很, 高兴, 高, 兴
+2 . 认识, 也, 认, 识
+
+FOOD 1
+SEE TIP
+1 . 吃, 饭, 鱼, 面
+2 . 喝, 水, 茶, 不
+
+OCCUPATION
+SEE TIP
+1 . 是, 他, 学生, 学, 生
+2 . 吗, 她, 你们, 我们, 他们, 们
+3 . 老师, 医生, 她们, 老, 师, 医
+
+UNIT 1 OVERVIEW
+101 words
+6 skill

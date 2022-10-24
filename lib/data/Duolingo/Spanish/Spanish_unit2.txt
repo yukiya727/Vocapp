@@ -1,0 +1,190 @@
+UNIT 2 OF 9
+GREETINGS
+SEE TIP
+1 . cómo, bien, estoy, estás, está, cansado, cansada
+2 . señor, señora, señorita, hasta mañana, cómo está, buenas tardes, hasta luego, usted
+3 . te llamas, se llama, feliz, mal, muy, ocupado, ocupada
+
+TRAVEL 2
+SEE TIP
+1 . café, banana, quiero, quieres, quiere, más, té
+2 . carro, taxi, ayuda, dinero, necesito, necesitas, necesita
+3 . teléfono, uso, computadora, usas, usa, bolígrafo, usar
+4 . tengo, tienes, pasaporte, boleto, maleta, tiene, cartera
+
+SCHEDULE
+SEE TIP
+1 . hoy, lunes, mañana, partido, martes, fútbol, cuándo
+2 . miércoles, jueves, viernes, día, béisbol, qué, cumpleaños
+3 . tu, sábado, fiesta, domingo, concierto, divertido, divertida
+4 . baile, favorito, favorita, película, semana, fin de semana, disfruta
+
+PEOPLE 2
+SEE TIP
+1 . habla, francés, estudio, estudias, estudia, hablar, estudiar
+2 . trabajo, trabajas, trabaja, oficina, fábrica, trabajar, quién
+3 . ensalada, sándwich, comer, carne, beber, vino, jugo
+4 . vives, vive, casa, vivir, Inglaterra, Francia, Europa
+
+PEOPLE 3
+SEE TIP
+1 . camarero, camarera, maestro, maestra, escuela, restaurante, portugués
+2 . joven, dirección, número, celular, amigo, amiga, ser
+3 . importante, grande, médico, médica, gato, perro, ciudad
+4 . pueblo, novio, novia, hermano, hermana, familia, con
+
+SCHOOL 2
+SEE TIP
+1 . cero, uno, tres, dos, bolígrafos, libro, libros
+2 . cuatro, biblioteca, universidad, computadoras, comprar, bibliotecas, pregunta
+3 . aprendo, aprendes, aprende, cinco, este, aprender, esta
+4 . preguntas, seis, clase, clases, siete, ocho, estudiantes
+
+AGREEMENT (GRAMMAR SKILL)
+FAMILY 2
+SEE TIP
+1 . padre, bonita, bonito, inteligente, madre, italiano, su
+2 . hijo, hijos, pequeño, pequeña, esposo
+3 . simpático, simpática, alto, alta, bajo, baja, mascota
+4 . abuelo, abuela, española, inglesa, año, nueve, diez
+
+WORK
+SEE TIP
+1 . los, las, trabajo, jefe, mensaje, secretario
+2 . escritorio, aquí, escribir, escribo, escribes, escribe, mucho
+3 . para, tener, carta, cuál, poco, problema, correo electrónico
+4 . nuevo, leer, negocio, leo, lees, ahora, lee
+
+EMOTIONS
+SEE TIP
+1 . qué tal, emocionar, enfermo, conmigo, contigo, siempre, triste
+2 . preocupado, por qué, aburrido, enojado, o, mañana, también
+3 . a veces, contento, disfrutar, dormir, papá, mamá, nunca
+4 . me siento, te sientes, se siente, otra vez, un poco, bebé, sorprendido
+
+PEOPLE 4
+SEE TIP
+1 . mujeres, hombres, nosotros, nosotras, somos, estudiamos, hablamos
+2 . ellos, ellas, son, hablan, estudian, ciudades, universidades
+3 . ustedes, amigo, muchas, muchos, jugador, fines de semana
+4 . señores, señoras, cuánto, cuántas, unos, unas, vacaciones
+
+FASHION
+SEE TIP
+1 . carteras, grandes, interesantes, verde, verdes, vestido, camiseta
+2 . bonitos, bonitas, nuevos, nuevas, usamos, necesitamos, zapato
+3 . estos, estas, rojo, rojos, rojas, usan, pantalón
+4 . necesitan, pequeños, pequeñas, camisa, mis, tus, sus
+
+TRAVEL 3
+SEE TIP
+1 . viajar, cerca de, a, tren, cerca, ir, estación
+2 . estamos, hotel, aeropuerto, del, el café, parque, al
+3 . están, lejos, al lado, supermercado, parada, autobús, puerta
+4 . banco, hospital, calle, tomar, izquierda, derecha, metro
+
+LEISURE
+SEE TIP
+1 . queremos, caminar, sándwiches, periódico, playa, comemos, leemos
+2 . escribimos, correos electrónicos, tarde, vivimos, casas, divertido, aburrido
+3 . quieren, comen, restaurantes, comida, pollo, arroz, bueno
+4 . escriben, viven, leen, abrir, verano, junto, mucho
+
+PRES TENSE 2 (GRAMMAR SKILL)
+ACTIVITIES
+SEE TIP
+1 . hablar español, tomar el, trabajar en, tú hablas, toma, trabajamos, ellos hablan, tomamos, trabajan
+2 . quiero beber, comer una, leer este, tú bebes, ella come, nosotros leemos, beben, nosotros comemos, ellos leen
+3 . necesita escribir, vivir en, tú escribes, usted vive, abrimos, ellas escriben, nosotras vivimos, abren, necesitamos abrir
+4 . necesito comprar, quiere aprender, compramos, aprendemos, salimos, compran, aprenden, salen, salir
+
+PREFERENCE
+SEE TIP
+1 . me gusta, chocolate, pastel, queso, favorito, porque, azúcar
+2 . te gusta, ese, sombrero, falda, creo que, pero, algo
+3 . jugar, correr, me encanta, nadar, te encanta, piscina, dibujar
+4 . música, ropa, bicicleta, chico, elegante, viejo, perros
+
+ROUTINES
+SEE TIP
+1 . voy, vas, a menudo, va, todo, cine, noche
+2 . vamos, días, van, media, televisión, sábados, mirar
+3 . tengo que, domingos, tienes que, tiene que, me levanto, me ducho, hora
+4 . a qué hora, te levantas, te duchas, se levanta, se ducha, once, doce
+
+HOUSEHOLD
+SEE TIP
+1 . hay, cocina, nevera, dormitorio, cama, sala, moderno
+2 . tenemos, baño, habitación, ventana, tienen, azul, reloj
+3 . estantería, comprar, silla, sobre, ese, pintar, limpiar
+4 . jardín, planta, teléfonos, celulares, debajo
+
+MENU
+SEE TIP
+1 . camarero, mesa, quisiera, pescado, frijol, cerveza, menús
+2 . puede traer, cuchara, cuchillo, tenedor, sal, plato, vaso
+3 . un plato, sin, bebida, blanco, tinto, otro, botella
+4 . pagar, cuenta, sopa, patata, frito, postre
+
+FAMILY 3
+SEE TIP
+1 . nuestro, se llaman, padres, abuelo, americano, familias
+2 . español, hermano, simpático, le gusta, le encanta, baloncesto, deporte
+3 . nos gusta, nos encanta, conciertos, escuchar, piano, tocar, guitarra
+4 . mexicano, películas, mayor, menor, marido
+
+SHOPPING 2
+SEE TIP
+1 . de compras, tienda, buscar, abre, cierra, mí, ti
+2 . precio, barato, talla, me puedo probar, probador, caro
+3 . cuesta, trece, quince, cuestan, peso, dólar, catorce
+4 . dieciséis, diecisiete, dieciocho, diecinueve, veinte, en efectivo, tarjeta de crédito
+
+DESCRIBE
+SEE TIP
+1 . felices, tristes, preocupado, enojado, nervioso, sorprendido, emocionados
+2 . cansado, ocupado, limpio, sucio, abierto, cerrado, enfermo
+3 . alto, es grande, guapo, rubio, moreno, amarillo, negro
+4 . es divertido, es muy simpático, inteligentes, perezoso, estudioso, persona, responsable
+
+TO BE (GRAMMAR SKILL)
+RECREATION
+SEE TIP
+1 . les gusta, les encanta, para él, para ella, disfrutar, regalo, aquel
+2 . a mí, a ti, a él, zoológico, a usted, tenis
+3 . a nosotros, a ustedes, tiempo, para nosotros, pasar, normalmente
+4 . montar, caballo, pelota, correr, río, caminar
+
+COMMUNITY
+SEE TIP
+1 . conocer, Alemania, maestro, conoces, médico, país, conozco
+2 . visitar, parte, pueblos, gente, lugar, diferente
+3 . llamar, ayudar, alguno, usualmente, niño
+4 . ver, tele, enseñar, amar
+
+PHRASES 2
+SEE TIP
+1 . cuántos años, veintiún, veintiuno, veintidós, jóvenes, señoritas, adulto
+2 . veintitrés, veinticuatro, jugos, veinticinco, sed, pizza, hambre
+3 . calor, frío, abrigo, puesto, largo, marrón, gris
+4 . sueño, ganas, miedo, de verdad, bailar, animal
+
+CONNECTION
+SEE TIP
+1 . me, te, nos, me compra, nos compra, muñeca, te compra
+2 . te conozco, me conoce, nos conocen, te visitan, nos visita, me necesita, me escucha
+3 . te necesito, me llaman, te llamamos, nos escuchan, nos llamas, te amo, me ama
+4 . te ayudo, me ayudas, nos ayudan, curso, me enseña, idioma, alemán
+
+ROUTINES 2
+SEE TIP
+1 . hacer, hago, tarea, desayuno, almuerzo, haces, cena
+2 . demasiado, diario, cosa, antes, después, solo, tomo
+3 . ponerse, me pongo, te pones, se pone, cada, ducharse, levantarse
+4 . salgo, temprano, tarde, semanas, fácil, sale, difícil
+
+UNIT 2 OVERVIEW
+730 words
+26 skills
+CEFR A1
+Now you can talk about yourself, your routines, preferences, and what you do for fun. You can also ask for directions and shop.
