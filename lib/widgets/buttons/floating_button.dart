@@ -33,10 +33,10 @@ class FloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(vertical: blockSizeV!, horizontal: blockSizeH!),
+          EdgeInsets.symmetric(vertical: blockSizeV, horizontal: blockSizeH),
       child: Container(
-        height: blockSizeV! * 11,
-        width: blockSizeH! * 25 * widthX,
+        height: blockSizeV * 11,
+        width: blockSizeH * 25 * widthX,
         decoration: BoxDecoration(
           color: bgColor,
           borderRadius: BorderRadius.circular(50),
@@ -63,7 +63,7 @@ class FloatingButton extends StatelessWidget {
                 children: [
                   Icon(
                     buttonIcon,
-                    size: blockSizeH! * 8 * iconSizeX,
+                    size: blockSizeH * 8 * iconSizeX,
                     color: Colors.white,
                   ),
                   if (buttonName != null)
@@ -71,7 +71,7 @@ class FloatingButton extends StatelessWidget {
                       buttonName!,
                       style: TextStyle(
                         color: buttonTextColor ?? Colors.white,
-                        fontSize: blockSizeH! * 5,
+                        fontSize: blockSizeH * 5,
                         fontWeight: FontWeight.w600,
                       ),
                     ),

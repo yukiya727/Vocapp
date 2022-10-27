@@ -40,8 +40,7 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     // initialize size config
-    SizeConfig().init(context);
-    double sizeV = SizeConfig.blockSizeV!;
+    double sizeV = SizeConfig.blockSizeV;
 
     return Scaffold(
       backgroundColor: Colors.white,

@@ -20,8 +20,8 @@ class MainTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-          vertical: blockSizeV!,
-          horizontal: blockSizeH!
+          vertical: blockSizeV,
+          horizontal: blockSizeH
       ),
       child: TextButton(
         onPressed: onPressed,

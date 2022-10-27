@@ -30,9 +30,6 @@ class _EditBookLIstViewState extends State<EditBookLIstView> {
 
   @override
   Widget build(BuildContext context) {
-    // final SizeV = SizeConfig.blockSizeV!;
-    // final SizeH = SizeConfig.blockSizeH!;
-
     return
       AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(

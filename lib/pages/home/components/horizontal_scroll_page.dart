@@ -30,8 +30,8 @@ class _BookLIstViewState extends State<BookLIstView> {
 
   @override
   Widget build(BuildContext context) {
-    final SizeV = SizeConfig.blockSizeV!;
-    final SizeH = SizeConfig.blockSizeH!;
+    final SizeV = MediaQuery.of(context).size.height / 100;
+    final SizeH = MediaQuery.of(context).size.width / 100;
     return PageView(
       controller: _controller,
       children: <Hero>[

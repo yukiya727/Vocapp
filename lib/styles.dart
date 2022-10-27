@@ -12,33 +12,35 @@ const Color kButtonTextColor = Color(0xffffffff);
 const Color kScaffoldBackground = Color(0xffffffff);
 const Color kTextFieldBackground = Color(0xfff4e9ff);
 
+final sizeV = SizeConfig.blockSizeV;
+
 final kTitle = TextStyle(
   fontFamily: 'Klasik',
-  fontSize: SizeConfig.blockSizeV! * 5.5,
+  fontSize: sizeV * 5.5,
   color: kTextColor,
 );
 
 final kTitle2 = TextStyle(
   fontFamily: 'Klasik',
-  fontSize: SizeConfig.blockSizeV! * 5,
+  fontSize: sizeV * 5,
   color: kTextColor,
 );
 
 final kBodyText1 = TextStyle(
   color: kTextColor,
-  fontSize:  SizeConfig.blockSizeV! * 4,
+  fontSize:  sizeV * 4,
   fontWeight: FontWeight.bold,
 );
 
 final kBodyText2 = TextStyle(
   color: kTextColor,
-  fontSize: SizeConfig.blockSizeV! * 2.5,
+  fontSize: sizeV * 2.5,
   fontWeight: FontWeight.bold,
 );
 
 final kBodyText3 = TextStyle(
     color: kTextColor,
-    fontSize: SizeConfig.blockSizeV! * 2,
+    fontSize: sizeV * 2,
     fontWeight: FontWeight.normal);
 
 final kButtonText = TextStyle(

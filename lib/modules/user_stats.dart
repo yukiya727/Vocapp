@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'user_stats.g.dart';
+part '../data/user_stats.g.dart';
 
 @JsonSerializable()
 class UserStats {

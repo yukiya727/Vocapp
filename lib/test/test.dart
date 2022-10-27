@@ -1,12 +1,10 @@
 import 'package:path_provider/path_provider.dart';
 
-import '../data/user_stats.dart';
-import '../data/book.dart';
+import '../modules/book.dart';
 import 'package:flutter/material.dart';
 import 'package:local_value/local_value.dart';
 
-export '../data/user_stats.dart';
-export '../data/book.dart';
+export '../modules/book.dart';
 
 final bookStorage = LocalValue<Book>(
   fromJson: Book.fromJson,

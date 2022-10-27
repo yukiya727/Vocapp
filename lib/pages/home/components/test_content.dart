@@ -1,4 +1,4 @@
-import '../../../data/book.dart';
+import '../../../modules/book.dart';
 import '../../../styles.dart';
 
 final List<Book> books = [

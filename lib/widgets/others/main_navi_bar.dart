@@ -18,9 +18,9 @@ class MyNaviBar extends StatefulWidget {
 class _MyNaviBarState extends State<MyNaviBar> {
   @override
   Widget build(BuildContext context) {
-    double sizeV = SizeConfig.blockSizeV! * 8;
+    double sizeV = SizeConfig.blockSizeV;
     return Container(
-      height: sizeV,
+      height: sizeV * 8,
       decoration: BoxDecoration(
         color: kPrimaryColor,
         boxShadow: [
@@ -36,7 +36,7 @@ class _MyNaviBarState extends State<MyNaviBar> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-            iconSize: SizeConfig.blockSizeV! * 3.5,
+            iconSize: sizeV * 3.5,
             icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 100),
                 transitionBuilder: (child, anim) => FadeTransition(
@@ -62,7 +62,7 @@ class _MyNaviBarState extends State<MyNaviBar> {
             },
           ),
           IconButton(
-            iconSize: SizeConfig.blockSizeV! * 3.5,
+            iconSize: sizeV * 3.5,
             icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 100),
                 transitionBuilder: (child, anim) => FadeTransition(
@@ -89,7 +89,7 @@ class _MyNaviBarState extends State<MyNaviBar> {
             },
           ),
           IconButton(
-            iconSize: SizeConfig.blockSizeV! * 3.5,
+            iconSize: sizeV * 3.5,
             icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 100),
                 transitionBuilder: (child, anim) => FadeTransition(

@@ -24,7 +24,7 @@ class MainIconTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          EdgeInsets.symmetric(vertical: blockSizeV!, horizontal: blockSizeH!),
+          EdgeInsets.symmetric(vertical: blockSizeV, horizontal: blockSizeH),
       child: TextButton.icon(
         onPressed: onPressed,
         label: Text(

@@ -1,4 +1,4 @@
-part of 'user_stats.dart';
+part of '../modules/user_stats.dart';
 
 UserStats _$UserStatsFromJson(Map<String, dynamic> json) {
   return UserStats(

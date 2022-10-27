@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vocapp/pages/home/components/stats_view.dart';
+import '../../size_configs.dart';
 import '../../styles.dart';
 import '../../widgets/others/main_navi_bar.dart';
 import 'components/library_view.dart';
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context: context);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarColor: kScaffoldBackground, //top status bar

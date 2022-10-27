@@ -1,20 +1,32 @@
 import 'package:flutter/material.dart';
 
-// for responsive design
 class SizeConfig {
-  static MediaQueryData? queryData;
-  static double? screenWidth;
-  static double? screenHeight;
-  static double? screenRatio;
-  static double? blockSizeH;
-  static double? blockSizeV;
-
-  void init(BuildContext context) {
-    queryData = MediaQuery.of(context);
-    screenWidth = queryData!.size.width;
-    screenHeight = queryData!.size.height;
-    screenRatio = queryData!.devicePixelRatio;
-    blockSizeH = screenWidth! / 100;
-    blockSizeV = screenHeight! / 100;
+  //declare variables here
+  static late MediaQueryData _mediaQueryData;
+  static late double screenWidth;
+  static late double screenHeight;
+  static late double _safeAreaHorizontal;
+  static late double _safeAreaVertical;
+  static late double sliderHeight;
+  static late double addToCartButtonHeight;
+  static late double blockSizeV;
+  static late double blockSizeH;
+  //init method is static so no object creation is required
+  static void init({
+    required context,
+  }) {
+    //instantiate variables here
+    _mediaQueryData = MediaQuery.of(context);
+    screenWidth = _mediaQueryData.size.width;
+    screenHeight = _mediaQueryData.size.height;
+    _safeAreaHorizontal =
+        _mediaQueryData.padding.left + _mediaQueryData.padding.right;
+    _safeAreaVertical =
+        _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
+    sliderHeight = screenHeight / 6;
+    addToCartButtonHeight = screenHeight / 14;
+    blockSizeV = screenHeight / 100;
+    blockSizeH = screenWidth / 100;
   }
+
 }

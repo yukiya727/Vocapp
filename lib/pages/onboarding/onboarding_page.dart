@@ -39,9 +39,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   @override
   Widget build(BuildContext context) {
     // initialize size config
-    SizeConfig().init(context);
-    double sizeV = SizeConfig.blockSizeV!;
-    double sizeH = SizeConfig.blockSizeH!;
+    double sizeV = SizeConfig.blockSizeV;
+    double sizeH = SizeConfig.blockSizeH;
 
     return Scaffold(
       backgroundColor: Colors.white,

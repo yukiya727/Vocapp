@@ -28,9 +28,9 @@ class _ChapterPageState extends State<ChapterPage>
   final _styleButtonKey = GlobalKey();
   final _styleMenuKey = GlobalKey();
   final _menuBarKey = GlobalKey();
-  final SizeV = SizeConfig.blockSizeV!;
-  final SizeH = SizeConfig.blockSizeH!;
-  final screenHeight = SizeConfig.screenHeight!;
+  final SizeV = SizeConfig.blockSizeV;
+  final SizeH = SizeConfig.blockSizeH;
+  final screenHeight = SizeConfig.screenHeight;
   final chapterNameController = TextEditingController();
   var adding_mode = false;
   var edit_style = false;

@@ -47,11 +47,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // double height = SizeConfig.screenHeight!;
-    double width = SizeConfig.screenWidth!;
-    // double screenRatio = SizeConfig.screenRatio!;
+    double width = SizeConfig.screenWidth;
     double extraSpace =
-        (SizeConfig.screenWidth! - SizeConfig.screenHeight!) / 2;
+        (SizeConfig.screenWidth - SizeConfig.screenHeight) / 2;
     double extraPaddingH = extraSpace > 0 ? extraSpace : 0;
 
     return Scaffold(

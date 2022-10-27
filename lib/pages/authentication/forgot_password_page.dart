@@ -31,7 +31,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
-    double height = SizeConfig.blockSizeV!;
+    double sizeV = SizeConfig.blockSizeV;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -62,7 +62,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: height * 3,
+                    height: sizeV * 3,
                   ),
                   Center(
                     child: Text(
@@ -71,7 +71,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     ),
                   ),
                   SizedBox(
-                    height: height * 2,
+                    height: sizeV * 2,
                   ),
                   Container(
                     child: Image.asset(
@@ -79,7 +79,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     ),
                   ),
                   SizedBox(
-                    height: height * 2,
+                    height: sizeV * 2,
                   ),
                   Container(
                     decoration: BoxDecoration(

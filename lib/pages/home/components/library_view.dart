@@ -28,8 +28,7 @@ class _LibraryViewState extends State<LibraryView> {
 
   @override
   Widget build(BuildContext context) {
-    final SizeV = SizeConfig.blockSizeV!;
-    final SizeH = SizeConfig.blockSizeH!;
+    final SizeV = SizeConfig.blockSizeV;
 
     return Scaffold(
       // backgroundColor: kScaffoldBackground,

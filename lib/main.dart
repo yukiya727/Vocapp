@@ -6,6 +6,7 @@ import 'package:vocapp/pages/authentication/login_page.dart';
 import 'package:vocapp/pages/books/providers/cover_style.dart';
 import 'package:vocapp/pages/onboarding/onboarding_page.dart';
 import 'package:vocapp/pages/home/home_page.dart';
+import 'package:vocapp/size_configs.dart';
 import 'package:vocapp/styles.dart';
 import 'package:vocapp/globals.dart' as globals;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -57,9 +58,8 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/': (context) => HomePage(),
-          // '/onBoarding': (context) => OnBoardingPage(),
-          // '/login': (context) => LoginPage(),
-          // ''
+          '/onBoarding': (context) => OnBoardingPage(),
+          '/login': (context) => LoginPage(),
         },
         // initialRoute: seenOnboard == false
         //     ? '/onBoarding' : '/login',

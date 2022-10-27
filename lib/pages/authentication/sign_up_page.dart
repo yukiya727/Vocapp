@@ -39,10 +39,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    double height = SizeConfig.blockSizeV!;
+    double height = SizeConfig.blockSizeV;
     double extraSpace =
-        (SizeConfig.screenWidth! - SizeConfig.screenHeight!) / 2;
+        (SizeConfig.screenWidth - SizeConfig.screenHeight) / 2;
     double extraPaddingH = extraSpace > 0 ? extraSpace : 0;
     return Scaffold(
       body: SafeArea(
